@@ -32,13 +32,13 @@
 <h1 id="teaching-title">Teaching</h1>
 <p class="teaching-intro">This section presents the topics covered in my undergraduate teaching at Université Marie et Louis Pasteur (France) and the University of Sousse (Tunisia). Select a subject, then expand a course to see its chapter outline.</p>
 <nav class="teaching-tabs" aria-label="Teaching subject navigation">
-<a href="#microeconomie">Microeconomics<span aria-hidden="true">↓</span></a>
-<a href="#econometrie">Econometrics<span aria-hidden="true">↓</span></a>
-<a href="#statistiques">Statistics<span aria-hidden="true">↓</span></a>
-<a href="#mathematiques">Mathematics<span aria-hidden="true">↓</span></a>
+<a href="#microeconomie" aria-controls="microeconomie" aria-expanded="false">Microeconomics<span aria-hidden="true">↓</span></a>
+<a href="#econometrie" aria-controls="econometrie" aria-expanded="false">Econometrics<span aria-hidden="true">↓</span></a>
+<a href="#statistiques" aria-controls="statistiques" aria-expanded="false">Statistics<span aria-hidden="true">↓</span></a>
+<a href="#mathematiques" aria-controls="mathematiques" aria-expanded="false">Mathematics<span aria-hidden="true">↓</span></a>
 </nav>
 </section>
-<section id="microeconomie" class="teaching-discipline">
+<section id="microeconomie" class="teaching-discipline" hidden>
 <div class="teaching-discipline-head"><h2>Microeconomics</h2><p>Preferences, individual choice, allocation mechanisms and competition, from first to third undergraduate year.</p></div>
 <div class="course-list"><details class="course-outline" id="micro4">
 <summary><span class="course-summary-main"><strong>Microeconomics 4 — Allocation Mechanisms and Equilibria</strong><span class="course-summary-meta">Université Marie et Louis Pasteur · Besançon · Third-year Economics · 2025–2027</span></span><span class="course-chevron" aria-hidden="true">⌄</span></summary>
@@ -86,7 +86,7 @@
 <li><span class="chapter-num">05</span><div><strong>Costs, supply and competitive equilibrium</strong><p>Study of production costs, firm supply and market equilibrium.</p></div></li>
 </ol></div></details></div>
 </section>
-<section id="econometrie" class="teaching-discipline">
+<section id="econometrie" class="teaching-discipline" hidden>
 <div class="teaching-discipline-head"><h2>Econometrics</h2><p>Regression models, estimation and economic interpretation, from introductory to third-year methods.</p></div>
 <div class="course-list"><details class="course-outline" id="eco3umlp">
 <summary><span class="course-summary-main"><strong>Econometrics</strong><span class="course-summary-meta">Université Marie et Louis Pasteur · Besançon · Third-year Economics and Management · 2025–2027</span></span><span class="course-chevron" aria-hidden="true">⌄</span></summary>
@@ -108,7 +108,7 @@
 <li><span class="chapter-num">04</span><div><strong>Hypothesis testing and goodness of fit</strong><p>Overview of common significance tests and measures of model fit.</p></div></li>
 </ol></div></details></div>
 </section>
-<section id="statistiques" class="teaching-discipline">
+<section id="statistiques" class="teaching-discipline" hidden>
 <div class="teaching-discipline-head"><h2>Statistics</h2><p>Statistical estimation and hypothesis testing for economic data analysis.</p></div>
 <div class="course-list">
 <details class="course-outline" id="stat3sousse">
@@ -122,7 +122,7 @@
 <li><span class="chapter-num">04</span><div><strong>Statistical hypothesis testing</strong><p>Analysis of Type I and Type II errors and standard tests for means, proportions and variances.</p></div></li>
 </ol></div></details></div>
 </section>
-<section id="mathematiques" class="teaching-discipline">
+<section id="mathematiques" class="teaching-discipline" hidden>
 <div class="teaching-discipline-head"><h2>Mathematics</h2><p>Foundations of mathematical analysis used in economic reasoning.</p></div>
 <div class="course-list"><details class="course-outline" id="math1sousse">
 <summary><span class="course-summary-main"><strong>Mathematics — Calculus</strong><span class="course-summary-meta">Université de Sousse · FSEGS · First-year Economics and Management · 2023–2024</span></span><span class="course-chevron" aria-hidden="true">⌄</span></summary>
@@ -137,5 +137,61 @@
 </ol></div></details></div>
 </section>
 </div></main>
+
+<script>
+(function () {
+  "use strict";
+  const subjects = Array.from(document.querySelectorAll(".teaching-discipline"));
+  const links = Array.from(document.querySelectorAll(".teaching-tabs a"));
+  const byId = new Map(subjects.map(section => [section.id, section]));
+
+  function showSubject(id, closeIfActive, scrollToSection) {
+    const target = byId.get(id);
+    if (!target) return;
+    const shouldClose = Boolean(closeIfActive && !target.hidden);
+    subjects.forEach(section => { section.hidden = shouldClose || section !== target; });
+    links.forEach(link => {
+      const active = !shouldClose && link.getAttribute("href") === "#" + id;
+      link.setAttribute("aria-expanded", String(active));
+      link.classList.toggle("is-active", active);
+    });
+    if (scrollToSection && !shouldClose) {
+      requestAnimationFrame(() => target.scrollIntoView({ behavior: "smooth", block: "start" }));
+    }
+  }
+
+  links.forEach(link => {
+    link.addEventListener("click", event => {
+      const id = link.getAttribute("href").slice(1);
+      if (!byId.has(id)) return;
+      event.preventDefault();
+      const closing = !byId.get(id).hidden;
+      showSubject(id, true, !closing);
+      const url = closing
+        ? location.pathname + location.search
+        : location.pathname + location.search + "#" + id;
+      history.replaceState(null, "", url);
+      if (closing) link.focus();
+    });
+  });
+
+  function showFromHash() {
+    const id = decodeURIComponent(location.hash.slice(1));
+    if (byId.has(id)) { showSubject(id, false, false); return; }
+    const course = document.getElementById(id);
+    if (course && course.matches("details.course-outline")) {
+      const parent = course.closest(".teaching-discipline");
+      if (parent) {
+        showSubject(parent.id, false, false);
+        course.open = true;
+        requestAnimationFrame(() => course.scrollIntoView({ block: "start" }));
+      }
+    }
+  }
+
+  window.addEventListener("hashchange", showFromHash);
+  showFromHash();
+})();
+</script>
 <footer>© 2026 Emanuel Namaiwa Barke · Personal academic website</footer>
 </body></html>
