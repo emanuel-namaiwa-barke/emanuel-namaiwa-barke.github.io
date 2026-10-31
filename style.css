@@ -315,3 +315,19 @@
 .cv-request-section .cv-lead {font-family:Georgia,serif;font-size:19px;color:var(--navy);margin:0 0 17px;}
 .cv-request-section .button {margin-top:15px;}
 .cv-request-section .cv-small {color:var(--muted);font-size:13px;margin-top:18px;}
+
+
+/* Page Contact */
+.contact-section { border-top:0; padding:35px 0 75px; }
+.contact-heading { max-width:800px; margin-bottom:32px; }
+.contact-eyebrow { color:var(--teal); font-size:12px; text-transform:uppercase; letter-spacing:1.7px; font-weight:700; }
+.contact-heading h1 { font-size:clamp(36px,4.3vw,49px); margin:7px 0 17px; }
+.contact-heading p:not(.contact-eyebrow) { color:var(--muted); font-size:16px; max-width:720px; }
+.contact-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin:20px 0 39px; }
+.contact-card { background:var(--white); border:1px solid var(--border); border-left:3px solid var(--teal); border-radius:7px; padding:20px 23px; min-width:0; }
+.contact-label { display:block; font-size:12px; color:var(--muted); font-weight:700; text-transform:uppercase; letter-spacing:.55px; margin-bottom:6px; }
+.contact-card a { font-size:15px; font-weight:600; text-decoration:underline; text-underline-offset:3px; overflow-wrap:anywhere; }
+.contact-affiliation { border-top:1px solid var(--border); padding-top:29px; max-width:700px; }
+.contact-affiliation h2 { font-size:24px; margin:0 0 14px; }
+.contact-affiliation p { margin-bottom:12px; }
+@media(max-width:700px) { .contact-grid { grid-template-columns:1fr; } .contact-section { padding-top:22px; } }
