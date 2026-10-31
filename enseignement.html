@@ -29,13 +29,13 @@
 <h1 id="teaching-title">Enseignement</h1>
 <p class="teaching-intro">Cet espace présente les principaux thèmes de mes enseignements de licence à l’Université Marie et Louis Pasteur (France) et à l’Université de Sousse (Tunisie). Choisissez une matière, puis dépliez un cours pour consulter les chapitres.</p>
 <nav class="teaching-tabs" aria-label="Navigation par matière">
-<a href="#microeconomie">Microéconomie<span aria-hidden="true">↓</span></a>
-<a href="#econometrie">Économétrie<span aria-hidden="true">↓</span></a>
-<a href="#statistiques">Statistiques<span aria-hidden="true">↓</span></a>
-<a href="#mathematiques">Mathématiques<span aria-hidden="true">↓</span></a>
+<a href="#microeconomie" aria-controls="microeconomie" aria-expanded="false">Microéconomie<span aria-hidden="true">↓</span></a>
+<a href="#econometrie" aria-controls="econometrie" aria-expanded="false">Économétrie<span aria-hidden="true">↓</span></a>
+<a href="#statistiques" aria-controls="statistiques" aria-expanded="false">Statistiques<span aria-hidden="true">↓</span></a>
+<a href="#mathematiques" aria-controls="mathematiques" aria-expanded="false">Mathématiques<span aria-hidden="true">↓</span></a>
 </nav>
 </section>
-<section id="microeconomie" class="teaching-discipline">
+<section id="microeconomie" class="teaching-discipline" hidden>
 <div class="teaching-discipline-head"><h2>Microéconomie</h2><p>Préférences, choix individuels, mécanismes d’allocation et formes de concurrence, du niveau L1 au niveau L3.</p></div>
 <div class="course-list"><details class="course-outline" id="micro4">
 <summary><span class="course-summary-main"><strong>Microéconomie 4 — Mécanismes d’allocation et équilibres</strong><span class="course-summary-meta">Université Marie et Louis Pasteur · Besançon · L3 Économie-Gestion · 2025–2027</span></span><span class="course-chevron" aria-hidden="true">⌄</span></summary>
@@ -83,7 +83,7 @@
 <li><span class="chapter-num">05</span><div><strong>Coûts, offre et équilibre concurrentiel</strong><p>Présentation des coûts de production, de l’offre de l’entreprise et de l’équilibre de marché.</p></div></li>
 </ol></div></details></div>
 </section>
-<section id="econometrie" class="teaching-discipline">
+<section id="econometrie" class="teaching-discipline" hidden>
 <div class="teaching-discipline-head"><h2>Économétrie</h2><p>Modèles de régression, estimation et interprétation économique, de l’initiation aux méthodes de L3.</p></div>
 <div class="course-list"><details class="course-outline" id="eco3umlp">
 <summary><span class="course-summary-main"><strong>Économétrie</strong><span class="course-summary-meta">Université Marie et Louis Pasteur · Besançon · L3 Économie-Gestion · 2025–2027</span></span><span class="course-chevron" aria-hidden="true">⌄</span></summary>
@@ -105,7 +105,7 @@
 <li><span class="chapter-num">04</span><div><strong>Tests d’hypothèses et qualité d’ajustement</strong><p>Présentation des tests usuels de significativité et des indicateurs d’ajustement des modèles.</p></div></li>
 </ol></div></details></div>
 </section>
-<section id="statistiques" class="teaching-discipline">
+<section id="statistiques" class="teaching-discipline" hidden>
 <div class="teaching-discipline-head"><h2>Statistiques</h2><p>Estimation et tests statistiques pour l’analyse des données économiques.</p></div>
 <div class="course-list">
 <details class="course-outline" id="stat3sousse">
@@ -119,7 +119,7 @@
 <li><span class="chapter-num">04</span><div><strong>Tests d’hypothèses statistiques</strong><p>Étude des risques de première et de seconde espèce et des principaux tests sur les moyennes, les proportions et les variances.</p></div></li>
 </ol></div></details></div>
 </section>
-<section id="mathematiques" class="teaching-discipline">
+<section id="mathematiques" class="teaching-discipline" hidden>
 <div class="teaching-discipline-head"><h2>Mathématiques</h2><p>Fondements de l’analyse mathématique appliquée aux raisonnements économiques.</p></div>
 <div class="course-list"><details class="course-outline" id="math1sousse">
 <summary><span class="course-summary-main"><strong>Mathématiques — Analyse</strong><span class="course-summary-meta">Université de Sousse · FSEGS · L1 Économie-Gestion · 2023–2024</span></span><span class="course-chevron" aria-hidden="true">⌄</span></summary>
@@ -134,5 +134,61 @@
 </ol></div></details></div>
 </section>
 </div></main>
+
+<script>
+(function () {
+  "use strict";
+  const subjects = Array.from(document.querySelectorAll(".teaching-discipline"));
+  const links = Array.from(document.querySelectorAll(".teaching-tabs a"));
+  const byId = new Map(subjects.map(section => [section.id, section]));
+
+  function showSubject(id, closeIfActive, scrollToSection) {
+    const target = byId.get(id);
+    if (!target) return;
+    const shouldClose = Boolean(closeIfActive && !target.hidden);
+    subjects.forEach(section => { section.hidden = shouldClose || section !== target; });
+    links.forEach(link => {
+      const active = !shouldClose && link.getAttribute("href") === "#" + id;
+      link.setAttribute("aria-expanded", String(active));
+      link.classList.toggle("is-active", active);
+    });
+    if (scrollToSection && !shouldClose) {
+      requestAnimationFrame(() => target.scrollIntoView({ behavior: "smooth", block: "start" }));
+    }
+  }
+
+  links.forEach(link => {
+    link.addEventListener("click", event => {
+      const id = link.getAttribute("href").slice(1);
+      if (!byId.has(id)) return;
+      event.preventDefault();
+      const closing = !byId.get(id).hidden;
+      showSubject(id, true, !closing);
+      const url = closing
+        ? location.pathname + location.search
+        : location.pathname + location.search + "#" + id;
+      history.replaceState(null, "", url);
+      if (closing) link.focus();
+    });
+  });
+
+  function showFromHash() {
+    const id = decodeURIComponent(location.hash.slice(1));
+    if (byId.has(id)) { showSubject(id, false, false); return; }
+    const course = document.getElementById(id);
+    if (course && course.matches("details.course-outline")) {
+      const parent = course.closest(".teaching-discipline");
+      if (parent) {
+        showSubject(parent.id, false, false);
+        course.open = true;
+        requestAnimationFrame(() => course.scrollIntoView({ block: "start" }));
+      }
+    }
+  }
+
+  window.addEventListener("hashchange", showFromHash);
+  showFromHash();
+})();
+</script>
 <footer>© 2026 Emanuel Namaiwa Barke · Site web académique personnel</footer>
 </body></html>
