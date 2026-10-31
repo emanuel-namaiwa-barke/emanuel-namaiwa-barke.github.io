@@ -505,3 +505,8 @@
 .ai-aside .ai-aside-links{margin:0;}
 @media(max-width:850px){.ai-grid{grid-template-columns:1fr;}.ai-aside{padding:25px;}}
 @media(max-width:600px){.ai-page{padding:22px 0 55px;}.ai-workspace{padding:21px 18px;}.ai-topic{font-size:12px;}.ai-preview{min-height:0;}.ai-lead{font-size:15px;}}
+
+/* Google Scholar card: balanced final contact row */
+.contact-card--scholar { grid-column:1 / -1; }
+.contact-card-note {font-size:12px;color:var(--muted);line-height:1.5;margin:7px 0 0;}
+@media (max-width:700px) {.contact-card--scholar {grid-column:auto;}}
