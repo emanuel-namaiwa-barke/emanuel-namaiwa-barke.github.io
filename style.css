@@ -522,3 +522,19 @@
 }
 .teaching-tabs a.is-active span { color: #fff; }
 .teaching-discipline[hidden] { display: none; }
+
+/* Publications : listes ouvertes uniquement sur sélection du visiteur */
+html.js-publications-ready #publications .pub-group:not(.is-active) {display:none;}
+#publications .pub-shortcuts a.is-active,
+#publications .pub-shortcuts a.is-active:hover,
+#publications .pub-shortcuts a.is-active:focus-visible {
+  background:var(--teal);
+  border-color:var(--teal);
+  color:#fff;
+  box-shadow:0 5px 16px rgba(32,118,111,.13);
+}
+#publications .pub-shortcuts a.is-active span {color:#fff;}
+#publications .pub-shortcuts a:focus-visible {outline:2px solid var(--teal);outline-offset:3px;}
+@media print {
+  html.js-publications-ready #publications .pub-group {display:block !important;}
+}
