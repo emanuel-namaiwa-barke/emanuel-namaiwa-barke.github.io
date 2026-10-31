@@ -510,3 +510,15 @@
 .contact-card--scholar { grid-column:1 / -1; }
 .contact-card-note {font-size:12px;color:var(--muted);line-height:1.5;margin:7px 0 0;}
 @media (max-width:700px) {.contact-card--scholar {grid-column:auto;}}
+
+/* Enseignement : une seule matière visible sur demande */
+.teaching-tabs a.is-active,
+.teaching-tabs a.is-active:hover,
+.teaching-tabs a.is-active:focus-visible {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: #fff;
+  box-shadow: 0 5px 16px rgba(32, 118, 111, .13);
+}
+.teaching-tabs a.is-active span { color: #fff; }
+.teaching-discipline[hidden] { display: none; }
