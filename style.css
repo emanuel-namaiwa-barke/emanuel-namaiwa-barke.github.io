@@ -385,3 +385,40 @@
 .book-research-card {display:grid;grid-template-columns:170px minmax(0,1fr);gap:26px;align-items:center;margin:30px 0 38px;padding:28px 30px;background:white;border:1px solid var(--border);border-radius:10px;scroll-margin-top:100px;}
 .book-research-card .book-feature-copy p {font-size:14px;}
 @media(max-width:700px){.book-feature{grid-template-columns:1fr;gap:25px;padding:23px;}.book-feature-art{max-width:185px;justify-self:start;}.book-research-card{grid-template-columns:1fr;padding:22px;}.book-research-card .book-feature-art{max-width:150px;}}
+
+
+/* Academic teaching: subject navigation and expandable course outlines */
+.teaching-hub {padding:12px 0 75px;max-width:1060px;margin:0 auto;}
+.teaching-hero {border:0;padding:16px 0 35px;}
+.teaching-eyebrow {font-family:"Segoe UI",Arial,sans-serif;font-size:12px;font-weight:750;letter-spacing:1.7px;text-transform:uppercase;color:var(--teal);margin:0 0 9px;}
+.teaching-hero h1 {font-family:Georgia,serif;font-size:clamp(38px,4.8vw,55px);line-height:1.15;color:var(--navy);margin:0 0 19px;}
+.teaching-intro {font-size:17px;line-height:1.85;max-width:900px;margin:0 0 27px;color:var(--muted);}
+.teaching-tabs {display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 3px;}
+.teaching-tabs a {display:inline-flex;align-items:center;gap:19px;padding:12px 18px;border:1px solid var(--border);border-radius:50px;background:#fff;color:var(--navy);font-size:14px;font-weight:700;text-decoration:none;box-shadow:0 2px 6px rgba(22,48,70,.035);transition:background .2s,border-color .2s;}
+.teaching-tabs a span {font-weight:800;color:var(--teal);}
+.teaching-tabs a:hover,.teaching-tabs a:focus-visible {background:#e9f4f0;border-color:var(--teal);}
+.teaching-discipline {margin-top:33px;padding-top:25px;border-top:1px solid var(--border);scroll-margin-top:115px;}
+.teaching-discipline-head {margin-bottom:22px;}
+.teaching-discipline-head h2 {font-family:Georgia,serif;color:var(--navy);font-size:clamp(26px,3vw,34px);margin:0 0 9px;}
+.teaching-discipline-head p {font-size:15px;line-height:1.7;color:var(--muted);max-width:850px;margin:0;}
+.course-list {display:grid;gap:13px;}
+.course-outline {background:#fff;border:1px solid var(--border);border-left:3px solid var(--teal);border-radius:9px;overflow:hidden;}
+.course-outline[open] {box-shadow:0 9px 22px rgba(22,48,70,.065);}
+.course-outline summary {display:flex;gap:14px;justify-content:space-between;align-items:center;padding:20px 23px;cursor:pointer;list-style:none;}
+.course-outline summary::-webkit-details-marker {display:none;}
+.course-outline summary:focus-visible {outline:2px solid var(--teal);outline-offset:-4px;}
+.course-summary-main {display:flex;flex-direction:column;gap:6px;min-width:0;}
+.course-summary-main strong {font-size:17px;line-height:1.45;color:var(--navy);}
+.course-summary-meta {font-size:13px;color:var(--muted);line-height:1.5;}
+.course-chevron {font-size:24px;line-height:1;color:var(--teal);transition:transform .2s;}
+.course-outline[open] .course-chevron {transform:rotate(180deg);}
+.course-outline-body {border-top:1px solid var(--border);padding:19px 24px 23px;}
+.course-type {display:inline-block;background:#edf4f2;padding:6px 10px;border-radius:5px;color:var(--teal);font-weight:700;font-size:11px;letter-spacing:.3px;margin:0 0 10px;}
+.course-chapters {list-style:none;margin:0;padding:0;}
+.course-chapters li {display:grid;grid-template-columns:33px minmax(0,1fr);gap:13px;padding:13px 0;border-bottom:1px solid #edf0f3;}
+.course-chapters li:last-child {border-bottom:0;padding-bottom:0;}
+.chapter-num {font-family:Georgia,serif;font-size:19px;color:var(--teal);line-height:1.3;}
+.course-chapters li strong {font-size:14px;color:var(--navy);line-height:1.5;}
+.course-chapters li p {font-size:13.5px;line-height:1.7;color:var(--muted);margin:5px 0 0;}
+.teaching-disclaimer {font-size:12.5px;color:var(--muted);line-height:1.7;border-top:1px solid var(--border);margin:34px 0 0;padding-top:17px;}
+@media(max-width:650px) {.teaching-hub{padding-top:2px;}.teaching-intro{font-size:15px;}.teaching-tabs a{font-size:13px;padding:10px 13px;gap:9px;}.course-outline summary{padding:16px;}.course-outline-body{padding:14px 17px 18px;}.course-summary-main strong{font-size:15px;}.course-summary-meta{font-size:12px;}.course-chapters li{gap:7px;grid-template-columns:28px minmax(0,1fr);}.chapter-num{font-size:17px;}}
