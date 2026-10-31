@@ -470,3 +470,38 @@
 @media(max-width:1100px){.nav{justify-content:center;}.brand{flex-basis:100%;text-align:center;}.nav-links{justify-content:center;}.lang-switch{border-left:0;padding-left:0;}}
 @media(max-width:850px){.community-facts{grid-template-columns:repeat(2,minmax(0,1fr));}.community-primary,.community-project{padding:28px;}}
 @media(max-width:650px){.community-page{padding-top:10px;}.community-hero{padding:24px 0 31px;}.community-lead{font-size:15.5px;}.community-primary,.community-project{padding:22px;}.community-initials{width:74px;min-width:74px;height:74px;}.community-initials span{font-size:28px;}.community-initials small{display:none;}.community-facts{gap:9px;}.community-facts>div{padding:13px 11px;}.community-facts strong{font-size:13px;}.community-pillars{grid-template-columns:1fr;}.community-experience{grid-template-columns:1fr;gap:4px;}.community-contact{display:block;padding:23px;}.community-contact .button{margin-top:16px;}.nav{padding:12px 17px;}.nav-links{gap:9px 14px;}.nav-links a{font-size:12px;}.lang-switch{margin-left:0;}}
+
+
+/* Academic profile assistant */
+.ai-page{border-top:0;padding:36px 0 85px;max-width:1160px;margin:0 auto;}
+.ai-eyebrow{font-size:12px!important;text-transform:uppercase;font-weight:750;letter-spacing:1.6px;color:var(--teal)!important;margin:0 0 12px!important;}
+.ai-page h1{font-family:Georgia,serif;font-size:clamp(36px,4.5vw,54px);margin:0 0 21px;}
+.ai-lead{font-size:16.5px;line-height:1.9;color:var(--muted);max-width:980px;margin:0 0 37px;}
+.ai-grid{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(260px,.8fr);align-items:start;gap:24px;}
+.ai-workspace,.ai-aside{background:#fff;border:1px solid var(--border);border-radius:11px;padding:29px 31px;box-shadow:0 6px 24px rgba(24,50,77,.045);}
+.ai-workspace{border-top:3px solid var(--teal);}
+.ai-workspace-header{display:flex;gap:15px;align-items:flex-start;}
+.ai-workspace-header h2{font-size:21px;margin:0 0 5px;color:var(--navy);}
+.ai-workspace-header p{color:var(--muted);font-size:13px;line-height:1.6;margin:0;}
+.ai-step{display:inline-flex;align-items:center;justify-content:center;background:#eaf5f2;border-radius:7px;color:var(--teal);font-size:12px;font-weight:800;min-width:32px;height:32px;flex-shrink:0;}
+.ai-topics{display:flex;flex-wrap:wrap;gap:9px;margin:22px 0 23px;}
+.ai-topic{background:#fff;border:1px solid #cbd9df;border-radius:22px;padding:9px 14px;font:600 13px "Segoe UI",Arial,sans-serif;color:var(--navy);cursor:pointer;}
+.ai-topic:hover,.ai-topic:focus-visible{border-color:var(--teal);background:#f2faf7;}
+.ai-topic.is-selected{background:var(--teal);color:#fff;border-color:var(--teal);}
+.ai-preview{padding:23px;background:#f6f9fb;border-radius:8px;border:1px solid #e1e8ed;min-height:240px;}
+.ai-preview-eyebrow{font:700 11px "Segoe UI",Arial,sans-serif;letter-spacing:.8px;text-transform:uppercase;color:var(--teal);margin:0 0 11px;}
+.ai-preview h3{font:700 19px Georgia,serif;line-height:1.4;color:var(--navy);margin:0 0 12px;}
+.ai-preview p:not(.ai-preview-eyebrow){font-size:14px;line-height:1.85;color:var(--text);margin:0;}
+.ai-workspace-header-secondary{padding-top:26px;margin-top:25px;border-top:1px solid var(--border);}
+.ai-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:20px;}
+.ai-actions .button{font-weight:700;}
+.ai-copy{border:1px solid var(--teal);background:white;color:var(--teal);border-radius:6px;padding:11px 17px;cursor:pointer;font:650 14px "Segoe UI",Arial,sans-serif;}
+.ai-copy:hover,.ai-copy:focus-visible{background:#edf6f3;}
+.ai-feedback{font-size:13px;color:var(--teal);min-height:15px;margin:10px 0 0;}
+.ai-aside-icon{width:45px;height:45px;display:flex;align-items:center;justify-content:center;background:#eaf4f1;border-radius:12px;color:var(--teal);font-size:24px;margin-bottom:18px;}
+.ai-aside h2{font-size:22px;margin:0 0 15px;}
+.ai-aside p{font-size:13.5px;line-height:1.85;color:var(--muted);margin:0 0 15px;}
+.ai-aside .ai-privacy{border-top:1px solid var(--border);padding-top:16px;}
+.ai-aside .ai-aside-links{margin:0;}
+@media(max-width:850px){.ai-grid{grid-template-columns:1fr;}.ai-aside{padding:25px;}}
+@media(max-width:600px){.ai-page{padding:22px 0 55px;}.ai-workspace{padding:21px 18px;}.ai-topic{font-size:12px;}.ai-preview{min-height:0;}.ai-lead{font-size:15px;}}
