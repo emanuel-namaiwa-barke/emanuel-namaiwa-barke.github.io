@@ -6,6 +6,7 @@
 <meta name="description" content="Articles, working papers et manuscrits d’Emanuel Namaiwa Barke.">
 <title>Publications | Emanuel Namaiwa Barke</title>
 <link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add("js-publications-ready");</script>
 </head><body>
 <header><nav class="nav" aria-label="Navigation principale">
 <a class="brand" href="index.html">EMANUEL NAMAIWA BARKE</a>
@@ -29,12 +30,12 @@
     <p class="pub-intro">Articles scientifiques, travaux en cours d'évaluation et documents de travail. Les statuts éditoriaux sont distingués des versions de travail diffusées publiquement.</p>
     <p class="pub-ranking-note">Les rangs indiqués correspondent à la liste du <strong>CNU, section 05, version de novembre 2025</strong>. Un preprint ou un working paper n'est pas assimilé à une publication en revue.</p>
     <nav class="pub-shortcuts" aria-label="Parcourir les travaux scientifiques">
-      <a href="#articles-publies">Articles publiés <span>5</span></a>
-      <a href="#articles-acceptes">Acceptés <span>1</span></a>
-      <a href="#articles-revision">En révision <span>1</span></a>
-      <a href="#articles-soumis">Soumis <span>4</span></a>
-      <a href="#documents-travail">Working papers <span>1</span></a>
-      <a href="#manuscrits">Manuscrits <span>3</span></a>
+      <a href="#articles-publies" aria-controls="articles-publies" aria-expanded="false">Articles publiés <span>5</span></a>
+      <a href="#articles-acceptes" aria-controls="articles-acceptes" aria-expanded="false">Acceptés <span>1</span></a>
+      <a href="#articles-revision" aria-controls="articles-revision" aria-expanded="false">En révision <span>1</span></a>
+      <a href="#articles-soumis" aria-controls="articles-soumis" aria-expanded="false">Soumis <span>4</span></a>
+      <a href="#documents-travail" aria-controls="documents-travail" aria-expanded="false">Working papers <span>1</span></a>
+      <a href="#manuscrits" aria-controls="manuscrits" aria-expanded="false">Manuscrits <span>3</span></a>
     </nav>
     <div class="pub-group" id="articles-publies">
   <div class="pub-group-heading"><h3>Articles publiés dans des revues à comité de lecture</h3><span class="pub-count">5</span></div>
@@ -152,5 +153,47 @@
 </div>
   </section>
 </main>
+
+<script>
+(function () {
+  "use strict";
+  const groups = Array.from(document.querySelectorAll("#publications .pub-group"));
+  const shortcuts = Array.from(document.querySelectorAll("#publications .pub-shortcuts a"));
+  const byId = new Map(groups.map(group => [group.id, group]));
+
+  function displayGroup(id, shouldScroll) {
+    groups.forEach(group => group.classList.toggle("is-active", group.id === id));
+    shortcuts.forEach(link => {
+      const isActive = link.getAttribute("href") === "#" + id;
+      link.classList.toggle("is-active", isActive);
+      link.setAttribute("aria-expanded", String(isActive));
+    });
+    const selected = byId.get(id);
+    if (shouldScroll && selected) {
+      requestAnimationFrame(() => selected.scrollIntoView({behavior: "smooth", block: "start"}));
+    }
+  }
+
+  shortcuts.forEach(link => {
+    link.addEventListener("click", event => {
+      const id = link.getAttribute("href").slice(1);
+      if (!byId.has(id)) return;
+      event.preventDefault();
+      const next = byId.get(id).classList.contains("is-active") ? "" : id;
+      displayGroup(next, Boolean(next));
+      history.replaceState(null, "", location.pathname + location.search + (next ? "#" + next : ""));
+      if (!next) link.focus();
+    });
+  });
+
+  function applyHash() {
+    const id = decodeURIComponent(location.hash.slice(1));
+    displayGroup(byId.has(id) ? id : "", Boolean(id && byId.has(id)));
+  }
+
+  window.addEventListener("hashchange", applyHash);
+  applyHash();
+})();
+</script>
 <footer>© 2026 Emanuel Namaiwa Barke · Site web académique personnel</footer>
 </body></html>
