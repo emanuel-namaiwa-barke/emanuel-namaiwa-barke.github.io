@@ -254,6 +254,38 @@
         flex-direction: column;
       }
     }
+
+    /* Bibliographie académique : lisible sur ordinateur et mobile */
+    #publications, .pub-group { scroll-margin-top: 110px; }
+    .pub-intro { max-width: 850px; margin-top: -5px; color: var(--text); }
+    .pub-ranking-note { font-size: 13px; color: var(--muted); background: #eef3f5; border-radius: 7px; padding: 13px 17px; }
+    .pub-shortcuts { display: flex; gap: 9px; flex-wrap: wrap; margin: 22px 0 37px; }
+    .pub-shortcuts a { display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; border: 1px solid var(--border); background: var(--white); border-radius: 20px; font-size: 13px; font-weight: 600; text-decoration: none; color: var(--navy); }
+    .pub-shortcuts a:hover { border-color: var(--teal); color: var(--teal); }
+    .pub-shortcuts span { color: var(--teal); }
+    .pub-group { margin: 0 0 38px; }
+    .pub-group-heading { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    .pub-group-heading h3 { margin: 0; color: var(--navy); font-size: 21px; line-height: 1.4; }
+    .pub-count { display: inline-block; min-width: 28px; height: 28px; padding: 2px 8px; border-radius: 14px; background: #e3eeed; color: var(--teal); font-size: 13px; text-align: center; font-weight: 700; }
+    .pub-note { color: var(--muted); font-size: 13px; margin: -3px 0 15px; }
+    #publications .publication { border: 1px solid var(--border); border-left: 3px solid var(--teal); border-radius: 5px; padding: 19px 23px; background: var(--white); margin: 0 0 12px; }
+    .publication h4 { margin: 0; line-height: 1.46; color: var(--navy); font-size: 16px; }
+    #publications .publication .pub-authors { font-size: 14px; margin: 5px 0; color: var(--text); }
+    .pub-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; color: var(--muted); font-size: 13px; }
+    .pub-meta em { color: var(--navy); }
+    .pub-dot { color: #91a0ac; }
+    .rank { font-weight: 700; color: var(--teal); }
+    .pub-actions { display: flex; align-items: baseline; gap: 17px; flex-wrap: wrap; margin-top: 11px; }
+    .pub-actions a { font-size: 13px; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+    .pub-actions small { color: var(--muted); font-size: 12px; overflow-wrap: anywhere; }
+    @media (max-width: 760px) {
+      #publications .publication { padding: 16px; }
+      .pub-group-heading h3 { font-size: 18px; }
+      .pub-shortcuts { margin-bottom: 28px; }
+      .pub-dot { display: none; }
+      .pub-meta { gap: 5px 12px; }
+    }
+
   </style>
 </head>
 
@@ -353,58 +385,133 @@
     </div>
   </section>
 
-  <section id="publications">
-    <h2>Publications sélectionnées</h2>
 
-    <div class="publication">
-      <strong>
-        A Theoretical Survey of Corporate Social
-        Responsibility: Between Externalities
-        and Asymmetric Information
-      </strong>
-      <p>
-        Managerial and Decision Economics (2026)
-        · CNU 05 : B
-      </p>
-      <a href="https://doi.org/10.1002/mde.70136"
-         target="_blank" rel="noopener noreferrer">
-        Résumé et article
-      </a>
-    </div>
-
-    <div class="publication">
-      <strong>
-        Strategic CSR in Asymmetric Network Duopoly
-      </strong>
-      <p>
-        Journal of Economics (2026) · CNU 05 : B
-      </p>
-      <a href="https://doi.org/10.1007/s00712-026-00929-1"
-         target="_blank" rel="noopener noreferrer">
-        Résumé et article
-      </a>
-    </div>
-
-    <div class="publication">
-      <strong>
-        Network Externalities and Corporate Social
-        Responsibility in a Bilateral Monopoly:
-        The Roles of Timing and Nash Bargaining
-      </strong>
-      <p>
-        Research in Economics (2026) · CNU 05 : B
-      </p>
-      <a href="https://doi.org/10.1016/j.rie.2026.101170"
-         target="_blank" rel="noopener noreferrer">
-        Résumé et article
-      </a>
-    </div>
-
-    <p>
-      Nous ajouterons ensuite la bibliographie
-      complète, les working papers et les
-      versions preprint.
-    </p>
+  <section id="publications" class="publications-section">
+    <h2>Publications et travaux de recherche</h2>
+    <p class="pub-intro">Articles scientifiques, travaux en cours d'évaluation et documents de travail. Les statuts éditoriaux sont distingués des versions de travail diffusées publiquement.</p>
+    <p class="pub-ranking-note">Les rangs indiqués correspondent à la liste du <strong>CNU, section 05, version de novembre 2025</strong>. Un preprint ou un working paper n'est pas assimilé à une publication en revue.</p>
+    <nav class="pub-shortcuts" aria-label="Parcourir les travaux scientifiques">
+      <a href="#articles-publies">Articles publiés <span>5</span></a>
+      <a href="#articles-acceptes">Acceptés <span>1</span></a>
+      <a href="#articles-revision">En révision <span>1</span></a>
+      <a href="#articles-soumis">Soumis <span>4</span></a>
+      <a href="#documents-travail">Working papers <span>1</span></a>
+      <a href="#manuscrits">Manuscrits <span>3</span></a>
+    </nav>
+    <div class="pub-group" id="articles-publies">
+  <div class="pub-group-heading"><h3>Articles publiés dans des revues à comité de lecture</h3><span class="pub-count">5</span></div>
+  
+  <article class="publication">
+  <h4>A Theoretical Survey of Corporate Social Responsibility: Between Externalities and Asymmetric Information</h4>
+  <p class="pub-authors">Emanuel Namaiwa Barke</p>
+  <div class="pub-meta"><em>Managerial and Decision Economics</em><span class="pub-dot" aria-hidden="true">·</span>2026<span class="pub-dot" aria-hidden="true">·</span><span class="rank">CNU 05 : rang B</span></div>
+  <div class="pub-actions"><a href="https://doi.org/10.1002/mde.70136" target="_blank" rel="noopener noreferrer">Résumé en ligne · DOI <span aria-hidden="true">↗</span></a><small>DOI : 10.1002/mde.70136</small></div>
+</article>
+<article class="publication">
+  <h4>Strategic CSR in Asymmetric Network Duopoly</h4>
+  <p class="pub-authors">Emanuel Namaiwa Barke</p>
+  <div class="pub-meta"><em>Journal of Economics</em><span class="pub-dot" aria-hidden="true">·</span>2026<span class="pub-dot" aria-hidden="true">·</span><span class="rank">CNU 05 : rang B</span></div>
+  <div class="pub-actions"><a href="https://doi.org/10.1007/s00712-026-00929-1" target="_blank" rel="noopener noreferrer">Résumé en ligne · DOI <span aria-hidden="true">↗</span></a><small>DOI : 10.1007/s00712-026-00929-1</small></div>
+</article>
+<article class="publication">
+  <h4>Network Externalities and Corporate Social Responsibility in a Bilateral Monopoly: The Roles of Timing and Nash Bargaining</h4>
+  <p class="pub-authors">Emanuel Namaiwa Barke</p>
+  <div class="pub-meta"><em>Research in Economics</em><span class="pub-dot" aria-hidden="true">·</span>2026 · vol. 80, no 3, art. 101170<span class="pub-dot" aria-hidden="true">·</span><span class="rank">CNU 05 : rang B</span></div>
+  <div class="pub-actions"><a href="https://doi.org/10.1016/j.rie.2026.101170" target="_blank" rel="noopener noreferrer">Résumé en ligne · DOI <span aria-hidden="true">↗</span></a><small>DOI : 10.1016/j.rie.2026.101170</small></div>
+</article>
+<article class="publication">
+  <h4>Endogenous Corporate Social Responsibility in the Presence of a Congestion Externality</h4>
+  <p class="pub-authors">Emanuel Namaiwa Barke et Khaireddine Jebsi</p>
+  <div class="pub-meta"><em>Journal of Industry, Competition and Trade</em><span class="pub-dot" aria-hidden="true">·</span>2026 · vol. 26, art. 24</div>
+  <div class="pub-actions"><a href="https://doi.org/10.1007/s10842-026-00486-9" target="_blank" rel="noopener noreferrer">Résumé en ligne · DOI <span aria-hidden="true">↗</span></a><small>DOI : 10.1007/s10842-026-00486-9</small></div>
+</article>
+<article class="publication">
+  <h4>Endogenous Corporate Social Responsibility in a Congested Network Monopoly: Passive Versus Responsive Consumer Expectations</h4>
+  <p class="pub-authors">Emanuel Namaiwa Barke</p>
+  <div class="pub-meta"><em>The Manchester School</em><span class="pub-dot" aria-hidden="true">·</span>2026<span class="pub-dot" aria-hidden="true">·</span><span class="rank">CNU 05 : rang B</span></div>
+  <div class="pub-actions"><a href="https://doi.org/10.1111/manc.70077" target="_blank" rel="noopener noreferrer">Résumé en ligne · DOI <span aria-hidden="true">↗</span></a><small>DOI : 10.1111/manc.70077</small></div>
+</article>
+</div>
+    <div class="pub-group" id="articles-acceptes">
+  <div class="pub-group-heading"><h3>Article accepté, à paraître</h3><span class="pub-count">1</span></div>
+  <p class="pub-note">Le lien CRESE renvoie à une version de travail (WP 2026-10) de cet article, non à une publication supplémentaire.</p>
+  <article class="publication">
+  <h4>Mutual Outsourcing in Network Industries: Cournot versus Stackelberg Competition</h4>
+  <p class="pub-authors">Emanuel Namaiwa Barke</p>
+  <div class="pub-meta"><em>Revue d’économie politique</em><span class="pub-dot" aria-hidden="true">·</span>Accepté, à paraître<span class="pub-dot" aria-hidden="true">·</span><span class="rank">CNU 05 : rang A</span></div>
+  <div class="pub-actions"><a href="https://crese.univ-fcomte.fr/publication/mutual-outsourcing-in-network-industries-cournotversus-stackelberg-competition/" target="_blank" rel="noopener noreferrer">Résumé en ligne · version de travail CRESE 2026-10 <span aria-hidden="true">↗</span></a></div>
+</article>
+</div>
+    <div class="pub-group" id="articles-revision">
+  <div class="pub-group-heading"><h3>Article en révision éditoriale</h3><span class="pub-count">1</span></div>
+  
+  <article class="publication">
+  <h4>Strategic CSR and Vertical Organization: Private Profitability versus Social Welfare</h4>
+  <p class="pub-authors">Emanuel Namaiwa Barke et Samar Hajji</p>
+  <div class="pub-meta"><em>Metroeconomica</em><span class="pub-dot" aria-hidden="true">·</span>Révision demandée (revise and resubmit) · 31 pages<span class="pub-dot" aria-hidden="true">·</span><span class="rank">CNU 05 : rang B</span></div>
+  
+</article>
+</div>
+    <div class="pub-group" id="articles-soumis">
+  <div class="pub-group-heading"><h3>Articles soumis à des revues</h3><span class="pub-count">4</span></div>
+  <p class="pub-note">Les liens ResearchGate renvoient aux preprints disponibles, et non à des versions publiées par les revues.</p>
+  <article class="publication">
+  <h4>Strategic CSR in a Bilateral Monopoly: Network Effects and Diseconomies of Scale</h4>
+  <p class="pub-authors">Emanuel Namaiwa Barke</p>
+  <div class="pub-meta"><em>The B.E. Journal of Economic Analysis &amp; Policy</em><span class="pub-dot" aria-hidden="true">·</span>Soumis · 23 pages<span class="pub-dot" aria-hidden="true">·</span><span class="rank">CNU 05 : rang B (Advances &amp; Frontiers)</span></div>
+  
+</article>
+<article class="publication">
+  <h4>A Note on Mutual Outsourcing and Tacit Collusion: Cournot versus Bertrand</h4>
+  <p class="pub-authors">Emanuel Namaiwa Barke</p>
+  <div class="pub-meta"><em>Revue économique</em><span class="pub-dot" aria-hidden="true">·</span>Soumis · 14 pages<span class="pub-dot" aria-hidden="true">·</span><span class="rank">CNU 05 : rang A</span></div>
+  <div class="pub-actions"><a href="https://www.researchgate.net/publication/416882284_A_note_on_mutual_outsourcing_and_tacit_collusion_Cournot_versus_Bertrand" target="_blank" rel="noopener noreferrer">Résumé et preprint · ResearchGate <span aria-hidden="true">↗</span></a></div>
+</article>
+<article class="publication">
+  <h4>Corporate Social Responsibility Affects Screening Incentives under Nonlinear Pricing</h4>
+  <p class="pub-authors">Emanuel Namaiwa Barke, Khaireddine Jebsi et Lionel Thomas</p>
+  <div class="pub-meta"><em>Journal of Business Ethics</em><span class="pub-dot" aria-hidden="true">·</span>Soumis · 48 pages<span class="pub-dot" aria-hidden="true">·</span><span class="rank">CNU 05 : rang A</span></div>
+  
+</article>
+<article class="publication">
+  <h4>Can Mutual Outsourcing Generate R&amp;D Anti-coordination?</h4>
+  <p class="pub-authors">Emanuel Namaiwa Barke</p>
+  <div class="pub-meta"><em>Review of Industrial Organization</em><span class="pub-dot" aria-hidden="true">·</span>Soumis · 36 pages<span class="pub-dot" aria-hidden="true">·</span><span class="rank">CNU 05 : rang A</span></div>
+  <div class="pub-actions"><a href="https://www.researchgate.net/publication/416882575_Can_mutual_outsourcing_generate_RD_anti-coordination" target="_blank" rel="noopener noreferrer">Résumé et preprint · ResearchGate <span aria-hidden="true">↗</span></a></div>
+</article>
+</div>
+    <div class="pub-group" id="documents-travail">
+  <div class="pub-group-heading"><h3>Working paper diffusé</h3><span class="pub-count">1</span></div>
+  
+  <article class="publication">
+  <h4>Cost Asymmetry and the R&amp;D Investment-decision Game</h4>
+  <p class="pub-authors">Emanuel Namaiwa Barke</p>
+  <div class="pub-meta"><em>CRESE Working Paper</em><span class="pub-dot" aria-hidden="true">·</span>Octobre 2026 · no 2026-14</div>
+  <div class="pub-actions"><a href="https://crese.univ-fcomte.fr/publication/cost-asymmetry-and-the-rd-investment-decision-game/" target="_blank" rel="noopener noreferrer">Résumé en ligne · CRESE <span aria-hidden="true">↗</span></a></div>
+</article>
+</div>
+    <div class="pub-group" id="manuscrits">
+  <div class="pub-group-heading"><h3>Manuscrits achevés, non soumis</h3><span class="pub-count">3</span></div>
+  
+  <article class="publication">
+  <h4>Promoting Corporate Social Responsibility in Franchise Networks: A Principal–Agent Model under Moral Hazard</h4>
+  <p class="pub-authors">Emanuel Namaiwa Barke et Khaireddine Jebsi</p>
+  <div class="pub-meta">Manuscrit achevé · non soumis · 56 pages</div>
+  
+</article>
+<article class="publication">
+  <h4>CSR or R&amp;D? Endogenous Strategic Orientation in a Cournot Duopoly with Technological Spillovers</h4>
+  <p class="pub-authors">Emanuel Namaiwa Barke et Khaireddine Jebsi</p>
+  <div class="pub-meta">Manuscrit achevé · non soumis · 38 pages</div>
+  
+</article>
+<article class="publication">
+  <h4>Mutual Outsourcing and the Ranking of Price and Quantity Competition</h4>
+  <p class="pub-authors">Emanuel Namaiwa Barke et Lionel Thomas</p>
+  <div class="pub-meta">Manuscrit achevé · non soumis · 13 pages</div>
+  
+</article>
+</div>
   </section>
 
   <section id="enseignement">
