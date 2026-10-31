@@ -331,3 +331,26 @@
 .contact-affiliation h2 { font-size:24px; margin:0 0 14px; }
 .contact-affiliation p { margin-bottom:12px; }
 @media(max-width:700px) { .contact-grid { grid-template-columns:1fr; } .contact-section { padding-top:22px; } }
+
+/* Bibliothèque académique des articles publiés */
+.research-library-teaser {background:var(--white);border:1px solid var(--border);border-left:4px solid var(--teal);border-radius:8px;padding:25px 27px;margin-top:34px;}
+.research-library-teaser h3 {font-size:21px;color:var(--navy);margin:0 0 8px;}
+.research-library-teaser p {color:var(--muted);max-width:800px;font-size:15px;margin:0 0 19px;}
+.research-library-teaser .button {display:inline-block;}
+.research-library {border-top:0;padding:23px 0 80px;}
+.research-library-back {font-size:13px;font-weight:600;text-decoration:none;}
+.research-library h1 {font-size:clamp(33px,4.3vw,49px);margin:17px 0;}
+.research-library-intro {max-width:880px;font-size:16px;line-height:1.8;}
+.research-library-notice {background:#eef3f5;color:var(--muted);font-size:13px;line-height:1.7;padding:15px 18px;border-radius:7px;margin:20px 0 29px;}
+.research-library-list {display:grid;gap:15px;}
+.research-library-card {background:white;border:1px solid var(--border);border-left:3px solid var(--teal);padding:23px 25px;display:flex;gap:23px;border-radius:7px;}
+.research-library-number {font-family:Georgia,serif;color:var(--teal);font-size:23px;line-height:1.3;min-width:35px;}
+.research-library-content {min-width:0;}
+.research-library-content h3 {font-size:18px;line-height:1.45;color:var(--navy);margin:0 0 9px;}
+.research-library-authors {font-size:14px;margin:0 0 6px;}
+.research-library-source {font-size:14px;color:var(--muted);margin:0;}
+.research-library-actions {display:flex;align-items:center;flex-wrap:wrap;gap:14px;margin-top:14px;font-size:13px;}
+.research-library-actions a {font-weight:700;text-underline-offset:3px;}
+.research-library-access {font-weight:700;color:var(--teal);}
+.research-library-more {margin-top:29px;font-size:14px;}
+@media(max-width:600px) {.research-library-card {padding:17px;gap:12px;}.research-library-number{min-width:28px;font-size:19px;}}
