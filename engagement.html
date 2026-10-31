@@ -5,6 +5,7 @@
 <meta name="description" content="Engagement associatif d’Emanuel Namaiwa Barke : ZUMUNCI SYNERGIE, projet de soutien éducatif au Niger et accompagnement des étudiants.">
 <title>Engagement associatif | Emanuel Namaiwa Barke</title>
 <link rel="stylesheet" href="style.css">
+<script>document.documentElement.classList.add("js-community-ready");</script>
 </head><body>
 <header><nav class="nav" aria-label="Navigation principale">
 <a class="brand" href="index.html">EMANUEL NAMAIWA BARKE</a>
@@ -29,15 +30,20 @@
 <p class="community-eyebrow">Solidarité · Éducation · Coopération</p>
 <h1 id="community-title">Engagement associatif</h1>
 <p class="community-lead">Parallèlement à mes activités d’enseignement et de recherche, je m’investis dans des initiatives associatives tournées vers l’éducation, la solidarité et l’accompagnement des jeunes. Cet engagement traduit ma volonté de contribuer, au-delà de l’université, à des projets ayant une portée sociale concrète.</p>
+<nav class="community-tabs" aria-label="Explorer les engagements">
+<a href="#zumunci" aria-controls="zumunci" aria-expanded="false">ZUMUNCI SYNERGIE<span aria-hidden="true">↓</span></a>
+<a href="#education" aria-controls="education" aria-expanded="false">Projet éducatif<span aria-hidden="true">↓</span></a>
+<a href="#other" aria-controls="other" aria-expanded="false">Autres engagements<span aria-hidden="true">↓</span></a>
+</nav>
 </section>
-<section class="community-primary" aria-labelledby="zumunci-title">
+<section class="community-primary community-panel" id="zumunci" aria-labelledby="zumunci-title">
 <div class="community-primary-top">
   <div>
     <p class="community-eyebrow">Mon engagement principal · Depuis 2026</p>
     <h2 id="zumunci-title">ZUMUNCI <span>SYNERGIE</span></h2>
     <p class="community-position">Secrétaire général · Association à but non lucratif</p>
   </div>
-  <div class="community-initials" aria-hidden="true"><span>ZS</span><small>Solidarité et avenir</small></div>
+  <img class="community-logo" src="logo-zumunci-synergie.webp" alt="Logo officiel de ZUMUNCI SYNERGIE" width="160" height="160" decoding="async">
 </div>
 <p>ZUMUNCI SYNERGIE est une association réunissant <strong>15 membres fondateurs</strong> autour d’une ambition commune : encourager l’éducation, l’entrepreneuriat et les initiatives favorisant le développement économique et social, la solidarité ainsi que la coopération internationale.</p>
 <p>En tant que <strong>secrétaire général</strong>, je prends part à cette dynamique collective et à la structuration d’un projet associatif destiné à apporter, à terme, un soutien aux communautés qui en ont besoin, en particulier au Niger.</p>
@@ -48,7 +54,7 @@
 <div><span>Équipe fondatrice</span><strong>15 membres fondateurs</strong></div>
 </div>
 </section>
-<section class="community-project" aria-labelledby="project-title">
+<section class="community-project community-panel" id="education" aria-labelledby="project-title">
 <div class="community-project-heading">
 <p class="community-eyebrow">Projet solidaire · En préparation</p>
 <h2 id="project-title">Favoriser l’accès à l’éducation au Niger</h2>
@@ -61,7 +67,7 @@
 <div><span class="community-pillar-no">03</span><h3>Coopération</h3><p>Construire progressivement une mobilisation collective en faveur du projet.</p></div>
 </div>
 </section>
-<section class="community-other" aria-labelledby="other-title">
+<section class="community-other community-panel" id="other" aria-labelledby="other-title">
 <h2 id="other-title">Autres engagements</h2>
 <div class="community-experience">
 <div class="community-period">2024–2025</div>
@@ -74,11 +80,53 @@
 <p>Représentation des doctorants au sein de la vie collective du Centre de recherche sur les stratégies économiques, à l’Université Marie et Louis Pasteur.</p></div>
 </div>
 </section>
+<div class="community-extras">
 <div class="community-contact">
 <div><h2>Échanger autour de cet engagement</h2><p>Pour une prise de contact ou un échange au sujet de ces initiatives associatives, vous pouvez me joindre directement.</p></div>
 <a class="button primary" href="mailto:emmabarke02@gmail.com?subject=%C3%89change%20-%20ZUMUNCI%20SYNERGIE">Me contacter</a>
 </div>
 <p class="community-note">Cette page présente mes engagements personnels et le projet de ZUMUNCI SYNERGIE. Elle ne constitue pas le site institutionnel officiel de l’association. Aucune collecte de dons n’est organisée ici.</p>
+</div>
 </div></main>
+
+<script>
+(function () {
+  "use strict";
+  const tabs = Array.from(document.querySelectorAll(".community-tabs a"));
+  const panels = Array.from(document.querySelectorAll(".community-panel"));
+  const extras = document.querySelector(".community-extras");
+  const byId = new Map(panels.map(panel => [panel.id, panel]));
+  const hashAliases = {"zumunci-title":"zumunci","project-title":"education","other-title":"other"};
+
+  function select(id, scroll) {
+    panels.forEach(panel => panel.classList.toggle("is-active", panel.id === id));
+    tabs.forEach(tab => {
+      const active = tab.getAttribute("href") === "#" + id;
+      tab.classList.toggle("is-active", active);
+      tab.setAttribute("aria-expanded", String(active));
+    });
+    if (extras) extras.classList.toggle("is-visible", byId.has(id));
+    if (scroll && byId.has(id))
+      requestAnimationFrame(() => byId.get(id).scrollIntoView({behavior:"smooth",block:"start"}));
+  }
+  tabs.forEach(tab => tab.addEventListener("click", function (event) {
+    const id = this.getAttribute("href").slice(1);
+    if (!byId.has(id)) return;
+    event.preventDefault();
+    const next = byId.get(id).classList.contains("is-active") ? "" : id;
+    select(next, Boolean(next));
+    history.replaceState(null, "", location.pathname + location.search + (next ? "#" + next : ""));
+    if (!next) this.focus();
+  }));
+  function openFromHash() {
+    const hash = decodeURIComponent(location.hash.slice(1));
+    const id = hashAliases[hash] || hash;
+    select(byId.has(id) ? id : "", Boolean(hash && byId.has(id)));
+  }
+  window.addEventListener("hashchange", openFromHash);
+  openFromHash();
+})();
+</script>
+
 <footer>© 2026 Emanuel Namaiwa Barke · Site web académique personnel</footer>
 </body></html>
