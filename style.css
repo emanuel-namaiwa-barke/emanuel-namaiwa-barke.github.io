@@ -538,3 +538,26 @@ html.js-publications-ready #publications .pub-group:not(.is-active) {display:non
 @media print {
   html.js-publications-ready #publications .pub-group {display:block !important;}
 }
+
+/* Engagement associatif : navigation compacte et rubriques à la demande */
+.community-hero {padding-bottom:26px;}
+.community-tabs {display:flex;flex-wrap:wrap;gap:11px;margin:29px 0 4px;}
+.community-tabs a {display:inline-flex;align-items:center;gap:17px;background:#fff;border:1px solid var(--border);border-radius:30px;padding:11px 17px;color:var(--navy);text-decoration:none;font-size:14px;font-weight:700;box-shadow:0 2px 7px rgba(24,50,77,.04);transition:background .2s,border-color .2s;}
+.community-tabs a span {color:var(--teal);font-size:17px;}
+.community-tabs a:hover,.community-tabs a:focus-visible {background:#edf7f3;border-color:var(--teal);}
+.community-tabs a.is-active,.community-tabs a.is-active:hover,.community-tabs a.is-active:focus-visible {background:var(--teal);color:#fff;border-color:var(--teal);}
+.community-tabs a.is-active span {color:#fff;}
+.community-tabs a:focus-visible {outline:2px solid var(--teal);outline-offset:3px;}
+.js-community-ready .community-panel:not(.is-active),
+.js-community-ready .community-extras:not(.is-visible) {display:none;}
+.community-panel {scroll-margin-top:125px;}
+.community-logo {display:block;width:146px;height:146px;object-fit:contain;flex-shrink:0;border:1px solid var(--border);border-radius:12px;background:#fff;padding:8px;box-shadow:0 5px 15px rgba(24,50,77,.055);}
+@media(max-width:650px) {
+  .community-tabs a {font-size:13px;gap:9px;padding:10px 13px;}
+  .community-logo {width:105px;height:105px;padding:5px;}
+  .community-primary-top {align-items:flex-start;}
+}
+@media print {
+  .js-community-ready .community-panel,
+  .js-community-ready .community-extras {display:block!important;}
+}
