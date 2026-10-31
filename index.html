@@ -1,0 +1,461 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <meta name="description"
+        content="Site académique d'Emanuel Namaiwa Barke,
+        doctorant en sciences économiques et ATER.">
+  <title>Emanuel Namaiwa Barke | Économiste</title>
+
+  <style>
+    :root {
+      --navy: #18324d;
+      --teal: #20766f;
+      --text: #263746;
+      --muted: #687989;
+      --background: #f7f9fb;
+      --white: #ffffff;
+      --border: #dce5ea;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      background: var(--background);
+      line-height: 1.7;
+    }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav {
+      max-width: 1120px;
+      margin: auto;
+      padding: 18px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 750;
+      letter-spacing: 0.3px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover,
+    a:hover {
+      color: var(--teal);
+    }
+
+    main {
+      max-width: 1120px;
+      margin: auto;
+      padding: 0 25px;
+    }
+
+    .hero {
+      padding: 95px 0 75px;
+      display: grid;
+      grid-template-columns: 1fr 230px;
+      align-items: center;
+      gap: 65px;
+    }
+
+    .eyebrow {
+      color: var(--teal);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    h1 {
+      color: var(--navy);
+      font-family: Georgia, serif;
+      font-size: clamp(34px, 5vw, 55px);
+      line-height: 1.2;
+      margin: 17px 0 20px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    .description {
+      max-width: 660px;
+      font-size: 16px;
+    }
+
+    .photo {
+      height: 270px;
+      border: 2px dashed var(--border);
+      border-radius: 12px;
+      background: #edf2f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 11px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 650;
+      border: 1px solid var(--teal);
+    }
+
+    .primary {
+      color: white;
+      background: var(--teal);
+    }
+
+    .primary:hover {
+      color: white;
+      background: #155e58;
+    }
+
+    .secondary {
+      color: var(--teal);
+      background: transparent;
+    }
+
+    section {
+      padding: 48px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    h2 {
+      font-family: Georgia, serif;
+      color: var(--navy);
+      font-size: 29px;
+      margin: 0 0 24px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      padding: 24px;
+      border-radius: 9px;
+    }
+
+    .card h3 {
+      color: var(--navy);
+      margin-top: 0;
+      font-size: 17px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+
+    .publication {
+      background: var(--white);
+      border-left: 3px solid var(--teal);
+      padding: 19px 24px;
+      margin-bottom: 14px;
+    }
+
+    .publication strong {
+      color: var(--navy);
+    }
+
+    .publication p {
+      margin: 7px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    a {
+      color: var(--teal);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 25px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 50px 0;
+        gap: 30px;
+      }
+
+      .photo {
+        max-width: 230px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav class="nav">
+    <a class="brand" href="#accueil">
+      EMANUEL NAMAIWA BARKE
+    </a>
+
+    <div class="nav-links">
+      <a href="#accueil">Accueil</a>
+      <a href="#recherche">Recherche</a>
+      <a href="#publications">Publications</a>
+      <a href="#enseignement">Enseignement</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <div class="hero" id="accueil">
+    <div>
+      <div class="eyebrow">
+        Économie industrielle · Microéconomie théorique
+      </div>
+
+      <h1>Emanuel Namaiwa Barke</h1>
+
+      <p class="subtitle">
+        Doctorant en sciences économiques<br>
+        Attaché temporaire d'enseignement et
+        de recherche (ATER)
+      </p>
+
+      <p class="description">
+        Je suis doctorant en sciences économiques
+        en cotutelle entre l'Université Marie et
+        Louis Pasteur (CRESE, France) et
+        l'Université de Sousse (LAMIDED, Tunisie).
+      </p>
+
+      <p class="description">
+        Mes recherches portent sur la responsabilité
+        sociale des entreprises, la concurrence
+        imparfaite, les asymétries d'information,
+        les externalités de réseau et l'innovation.
+      </p>
+
+      <div class="buttons">
+        <a class="button primary" href="#publications">
+          Voir mes publications
+        </a>
+
+        <a class="button secondary"
+           href="https://orcid.org/0009-0005-5897-1736"
+           target="_blank" rel="noopener noreferrer">
+          ORCID
+        </a>
+      </div>
+    </div>
+
+    <div class="photo">
+      Emplacement de la photographie
+    </div>
+  </div>
+
+  <section id="recherche">
+    <h2>Domaines de recherche</h2>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Économie industrielle</h3>
+        <p>
+          Concurrence imparfaite, interactions
+          stratégiques et organisation des marchés.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>RSE et théorie des contrats</h3>
+        <p>
+          Responsabilité sociale des entreprises,
+          information asymétrique et incitations.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Réseaux et innovation</h3>
+        <p>
+          Externalités de réseau, congestion,
+          sous-traitance et investissement en R&D.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications">
+    <h2>Publications sélectionnées</h2>
+
+    <div class="publication">
+      <strong>
+        A Theoretical Survey of Corporate Social
+        Responsibility: Between Externalities
+        and Asymmetric Information
+      </strong>
+      <p>
+        Managerial and Decision Economics (2026)
+        · CNU 05 : B
+      </p>
+      <a href="https://doi.org/10.1002/mde.70136"
+         target="_blank" rel="noopener noreferrer">
+        Résumé et article
+      </a>
+    </div>
+
+    <div class="publication">
+      <strong>
+        Strategic CSR in Asymmetric Network Duopoly
+      </strong>
+      <p>
+        Journal of Economics (2026) · CNU 05 : B
+      </p>
+      <a href="https://doi.org/10.1007/s00712-026-00929-1"
+         target="_blank" rel="noopener noreferrer">
+        Résumé et article
+      </a>
+    </div>
+
+    <div class="publication">
+      <strong>
+        Network Externalities and Corporate Social
+        Responsibility in a Bilateral Monopoly:
+        The Roles of Timing and Nash Bargaining
+      </strong>
+      <p>
+        Research in Economics (2026) · CNU 05 : B
+      </p>
+      <a href="https://doi.org/10.1016/j.rie.2026.101170"
+         target="_blank" rel="noopener noreferrer">
+        Résumé et article
+      </a>
+    </div>
+
+    <p>
+      Nous ajouterons ensuite la bibliographie
+      complète, les working papers et les
+      versions preprint.
+    </p>
+  </section>
+
+  <section id="enseignement">
+    <h2>Enseignement</h2>
+
+    <p>
+      J'enseigne la microéconomie et l'économétrie
+      à l'Université Marie et Louis Pasteur.
+      J'ai également assuré des enseignements
+      de microéconomie, d'économétrie et de
+      mathématiques à l'Université de Sousse.
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+
+    <p>
+      <strong>
+        Centre de recherche sur les stratégies
+        économiques (CRESE)
+      </strong><br>
+      Université Marie et Louis Pasteur<br>
+      Besançon, France
+    </p>
+
+    <p>
+      <a href="mailto:emanuel.namaiwa_barke@univ-fcomte.fr">
+        emanuel.namaiwa_barke@univ-fcomte.fr
+      </a>
+    </p>
+
+    <p>
+      <a href="https://www.researchgate.net/profile/Emanuel-Barke"
+         target="_blank" rel="noopener noreferrer">
+        ResearchGate
+      </a>
+      &nbsp;·&nbsp;
+      <a href="https://orcid.org/0009-0005-5897-1736"
+         target="_blank" rel="noopener noreferrer">
+        ORCID
+      </a>
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 Emanuel Namaiwa Barke
+  · Site web académique personnel
+</footer>
+
+</body>
+</html>
