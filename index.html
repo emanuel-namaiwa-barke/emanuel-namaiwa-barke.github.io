@@ -1,571 +1,107 @@
-
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1">
-  <meta name="description"
-        content="Site académique d'Emanuel Namaiwa Barke,
-        doctorant en sciences économiques et ATER.">
-  <title>Emanuel Namaiwa Barke | Économiste</title>
+<html lang="fr"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Emanuel Namaiwa Barke">
+<meta name="description" content="Parcours universitaire et activité scientifique d’Emanuel Namaiwa Barke.">
+<title>Accueil | Emanuel Namaiwa Barke</title>
+<link rel="stylesheet" href="style.css">
+</head><body>
+<header><nav class="nav" aria-label="Navigation principale">
+<a class="brand" href="index.html">EMANUEL NAMAIWA BARKE</a>
+<div class="nav-links">
+<a href="index.html" aria-current="page">Accueil</a>
+<a href="recherche.html">Recherche</a>
+<a href="publications.html">Publications</a>
+<a href="enseignement.html">Enseignement</a>
+<a href="contact.html">Contact</a>
+</div></nav></header>
+<main class="home-main">
+<section class="home-story" aria-labelledby="nom">
+  <div class="home-heading">
+    <div class="home-kicker">Économie industrielle · Microéconomie théorique</div>
+    <h1 id="nom">Emanuel Namaiwa Barke</h1>
+    <p class="home-role">Doctorant en sciences économiques · Attaché temporaire d’enseignement et de recherche (ATER)</p>
+  </div>
+  <div class="bio-grid">
+    <aside class="bio-aside">
+      <img class="bio-image" src="photo.jpg" alt="Portrait d’Emanuel Namaiwa Barke" width="330" height="440">
+      <p class="bio-aside-note"><strong>Université Marie et Louis Pasteur</strong><br>
+      CRESE, Besançon, France<br>
+      Cotutelle avec l’Université de Sousse (LAMIDED), Tunisie</p>
+    </aside>
+    <div class="bio-narrative">
+      <h2>Mon parcours</h2>
+      <p>Originaire du <strong>Niger</strong>, j’ai effectué mes études secondaires au
+      <a href="https://lex-edu.com/" target="_blank" rel="noopener noreferrer">prestigieux Lycée d’excellence de Niamey</a>,
+      où j’ai obtenu en 2017 un baccalauréat en mathématiques, mention Bien.
+      Cette formation exigeante marque le point de départ d’un parcours universitaire qui
+      m’a conduit du Niger à la Tunisie, puis à la France.</p>
 
-  <style>
-    :root {
-      --navy: #18324d;
-      --teal: #20766f;
-      --text: #263746;
-      --muted: #687989;
-      --background: #f7f9fb;
-      --white: #ffffff;
-      --border: #dce5ea;
-    }
+      <p>J’ai poursuivi mes études à la <strong>Faculté des sciences économiques et de gestion de Sousse</strong>,
+      en Tunisie. J’y ai obtenu une licence en économie quantitative en 2020, puis un
+      mastère de recherche en sciences économiques, spécialité ingénierie économique
+      et économétrie appliquée, en 2022, avec la mention Très bien.
+      Mon cursus a été récompensé par deux <strong>prix du doyen</strong>, en 2019 et 2021.
+      En 2021, j’ai été major de ma promotion et « major des majors » de la faculté.</p>
 
-    * {
-      box-sizing: border-box;
-    }
+      <p>L’année universitaire <strong>2019–2020</strong> a constitué une étape importante
+      de ce parcours grâce à une mobilité <strong>Erasmus+</strong> à l’Institut supérieur
+      d’économie et de management (<strong>ISEM</strong>) de l’Université Côte d’Azur, à Nice.
+      Cette expérience m’a permis de découvrir un autre environnement universitaire
+      et a renforcé la dimension internationale de ma formation.</p>
 
-    html {
-      scroll-behavior: smooth;
-    }
+      <p>En <strong>novembre 2023</strong>, j’ai entrepris un doctorat en sciences économiques
+      en <strong>cotutelle entre l’Université Marie et Louis Pasteur</strong>, au sein du
+      <strong>CRESE</strong> à Besançon, et <strong>l’Université de Sousse</strong>,
+      au sein du <strong>LAMIDED</strong>. Sous la direction des professeurs
+      <strong>Lionel Thomas</strong> et <strong>Khaireddine Jebsi</strong>,
+      ma thèse, intitulée <em>La responsabilité sociale des entreprises :
+      entre asymétries d’information et externalités de réseau</em>,
+      porte sur les incitations des entreprises à intégrer des objectifs
+      de responsabilité sociale dans différents environnements de marché.
+      Sa soutenance est prévue en novembre 2026.</p>
 
-    body {
-      margin: 0;
-      font-family: "Segoe UI", Arial, sans-serif;
-      color: var(--text);
-      background: var(--background);
-      line-height: 1.7;
-    }
+      <p>De <strong>2024 à 2026</strong>, j’ai été lauréat de la
+      <a href="https://www.campusfrance.org/fr/le-programme-de-bourses-france-excellence-eiffel"
+      target="_blank" rel="noopener noreferrer"><strong>prestigieuse bourse d’excellence
+      France Excellence Eiffel</strong></a>, un programme du ministère français de
+      l’Europe et des Affaires étrangères destiné à attirer les meilleurs
+      étudiants et doctorants internationaux. Cette distinction a accompagné
+      la poursuite et le développement de mes travaux de recherche en France.</p>
 
-    header {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
+      <p>Mes recherches s’inscrivent principalement en <strong>économie industrielle</strong>
+      et en <strong>microéconomie théorique</strong>. Elles portent sur la responsabilité
+      sociale des entreprises, la théorie des contrats, les asymétries d’information,
+      les externalités de réseau, la concurrence imparfaite et les décisions
+      d’innovation. Ces travaux ont donné lieu à des articles publiés dans
+      des revues internationales à comité de lecture, ainsi qu’à des communications
+      et des documents de recherche.</p>
 
-    .nav {
-      max-width: 1120px;
-      margin: auto;
-      padding: 18px 25px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+      <p>Parallèlement, j’ai développé une expérience d’enseignement universitaire,
+      d’abord à <strong>l’Université de Sousse</strong>, puis à Besançon.
+      Depuis <strong>septembre 2026</strong>, je suis <strong>attaché temporaire
+      d’enseignement et de recherche (ATER) à l’Université Marie et Louis Pasteur</strong>,
+      où j’enseigne notamment la microéconomie et l’économétrie.
+      Je participe également à la vie académique en qualité de
+      <strong>représentant des doctorants au conseil du CRESE</strong>.</p>
 
-    .brand {
-      color: var(--navy);
-      text-decoration: none;
-      font-weight: 750;
-      letter-spacing: 0.3px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 22px;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      color: var(--text);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-    }
-
-    .nav-links a:hover,
-    a:hover {
-      color: var(--teal);
-    }
-
-    main {
-      max-width: 1120px;
-      margin: auto;
-      padding: 0 25px;
-    }
-
-    .hero {
-      padding: 95px 0 75px;
-      display: grid;
-      grid-template-columns: 1fr 230px;
-      align-items: center;
-      gap: 65px;
-    }
-
-    .eyebrow {
-      color: var(--teal);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    h1 {
-      color: var(--navy);
-      font-family: Georgia, serif;
-      font-size: clamp(34px, 5vw, 55px);
-      line-height: 1.2;
-      margin: 17px 0 20px;
-    }
-
-    .subtitle {
-      font-size: 18px;
-      color: var(--muted);
-      margin-bottom: 25px;
-    }
-
-    .description {
-      max-width: 660px;
-      font-size: 16px;
-    }
-
-    .photo {
-      height: 270px;
-      border-radius: 12px;
-      background: #edf2f5;
-      overflow: hidden;
-      box-shadow: 0 12px 32px rgba(24, 50, 77, 0.12);
-      border: 1px solid var(--border);
-    }
-
-    .photo img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 30%;
-    }
-
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 30px;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 11px 20px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 650;
-      border: 1px solid var(--teal);
-    }
-
-    .primary {
-      color: white;
-      background: var(--teal);
-    }
-
-    .primary:hover {
-      color: white;
-      background: #155e58;
-    }
-
-    .secondary {
-      color: var(--teal);
-      background: transparent;
-    }
-
-    section {
-      padding: 48px 0;
-      border-top: 1px solid var(--border);
-    }
-
-    h2 {
-      font-family: Georgia, serif;
-      color: var(--navy);
-      font-size: 29px;
-      margin: 0 0 24px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .card {
-      background: var(--white);
-      border: 1px solid var(--border);
-      padding: 24px;
-      border-radius: 9px;
-    }
-
-    .card h3 {
-      color: var(--navy);
-      margin-top: 0;
-      font-size: 17px;
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 14px;
-      margin-bottom: 0;
-    }
-
-    .publication {
-      background: var(--white);
-      border-left: 3px solid var(--teal);
-      padding: 19px 24px;
-      margin-bottom: 14px;
-    }
-
-    .publication strong {
-      color: var(--navy);
-    }
-
-    .publication p {
-      margin: 7px 0 0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    a {
-      color: var(--teal);
-    }
-
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 30px 25px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    @media (max-width: 760px) {
-      .hero {
-        grid-template-columns: 1fr;
-        padding: 50px 0;
-        gap: 30px;
-      }
-
-      .photo {
-        max-width: 230px;
-      }
-
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      .nav {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-    }
-
-    /* Bibliographie académique : lisible sur ordinateur et mobile */
-    #publications, .pub-group { scroll-margin-top: 110px; }
-    .pub-intro { max-width: 850px; margin-top: -5px; color: var(--text); }
-    .pub-ranking-note { font-size: 13px; color: var(--muted); background: #eef3f5; border-radius: 7px; padding: 13px 17px; }
-    .pub-shortcuts { display: flex; gap: 9px; flex-wrap: wrap; margin: 22px 0 37px; }
-    .pub-shortcuts a { display: inline-flex; align-items: center; gap: 8px; padding: 7px 12px; border: 1px solid var(--border); background: var(--white); border-radius: 20px; font-size: 13px; font-weight: 600; text-decoration: none; color: var(--navy); }
-    .pub-shortcuts a:hover { border-color: var(--teal); color: var(--teal); }
-    .pub-shortcuts span { color: var(--teal); }
-    .pub-group { margin: 0 0 38px; }
-    .pub-group-heading { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
-    .pub-group-heading h3 { margin: 0; color: var(--navy); font-size: 21px; line-height: 1.4; }
-    .pub-count { display: inline-block; min-width: 28px; height: 28px; padding: 2px 8px; border-radius: 14px; background: #e3eeed; color: var(--teal); font-size: 13px; text-align: center; font-weight: 700; }
-    .pub-note { color: var(--muted); font-size: 13px; margin: -3px 0 15px; }
-    #publications .publication { border: 1px solid var(--border); border-left: 3px solid var(--teal); border-radius: 5px; padding: 19px 23px; background: var(--white); margin: 0 0 12px; }
-    .publication h4 { margin: 0; line-height: 1.46; color: var(--navy); font-size: 16px; }
-    #publications .publication .pub-authors { font-size: 14px; margin: 5px 0; color: var(--text); }
-    .pub-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; color: var(--muted); font-size: 13px; }
-    .pub-meta em { color: var(--navy); }
-    .pub-dot { color: #91a0ac; }
-    .rank { font-weight: 700; color: var(--teal); }
-    .pub-actions { display: flex; align-items: baseline; gap: 17px; flex-wrap: wrap; margin-top: 11px; }
-    .pub-actions a { font-size: 13px; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
-    .pub-actions small { color: var(--muted); font-size: 12px; overflow-wrap: anywhere; }
-    @media (max-width: 760px) {
-      #publications .publication { padding: 16px; }
-      .pub-group-heading h3 { font-size: 18px; }
-      .pub-shortcuts { margin-bottom: 28px; }
-      .pub-dot { display: none; }
-      .pub-meta { gap: 5px 12px; }
-    }
-
-  </style>
-</head>
-
-<body>
-
-<header>
-  <nav class="nav">
-    <a class="brand" href="#accueil">
-      EMANUEL NAMAIWA BARKE
-    </a>
-
-    <div class="nav-links">
-      <a href="#accueil">Accueil</a>
-      <a href="#recherche">Recherche</a>
-      <a href="#publications">Publications</a>
-      <a href="#enseignement">Enseignement</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
-</header>
-
-<main>
-
-  <div class="hero" id="accueil">
-    <div>
-      <div class="eyebrow">
-        Économie industrielle · Microéconomie théorique
+      <div class="bio-actions">
+        <a class="button primary" href="publications.html">Consulter mes publications</a>
+        <a class="button secondary" href="recherche.html">Découvrir mes recherches</a>
       </div>
-
-      <h1>Emanuel Namaiwa Barke</h1>
-
-      <p class="subtitle">
-        Doctorant en sciences économiques<br>
-        Attaché temporaire d'enseignement et
-        de recherche (ATER)
-      </p>
-
-      <p class="description">
-        Je suis doctorant en sciences économiques
-        en cotutelle entre l'Université Marie et
-        Louis Pasteur (CRESE, France) et
-        l'Université de Sousse (LAMIDED, Tunisie).
-      </p>
-
-      <p class="description">
-        Mes recherches portent sur la responsabilité
-        sociale des entreprises, la concurrence
-        imparfaite, les asymétries d'information,
-        les externalités de réseau et l'innovation.
-      </p>
-
-      <div class="buttons">
-        <a class="button primary" href="#publications">
-          Voir mes publications
-        </a>
-
-        <a class="button secondary"
-           href="https://orcid.org/0009-0005-5897-1736"
-           target="_blank" rel="noopener noreferrer">
-          ORCID
-        </a>
-      </div>
-    </div>
-
-    <div class="photo">
-      <img src="photo.jpg" alt="Portrait d'Emanuel Namaiwa Barke" width="230" height="270">
     </div>
   </div>
-
-  <section id="recherche">
-    <h2>Domaines de recherche</h2>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Économie industrielle</h3>
-        <p>
-          Concurrence imparfaite, interactions
-          stratégiques et organisation des marchés.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>RSE et théorie des contrats</h3>
-        <p>
-          Responsabilité sociale des entreprises,
-          information asymétrique et incitations.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Réseaux et innovation</h3>
-        <p>
-          Externalités de réseau, congestion,
-          sous-traitance et investissement en R&D.
-        </p>
-      </div>
+  <div class="bio-milestones">
+    <h2>Quelques repères académiques</h2>
+    <div class="milestones-grid">
+      <div class="milestone"><span class="year">2017</span><p>Baccalauréat au Lycée d’excellence de Niamey</p></div>
+      <div class="milestone"><span class="year">2019–2020</span><p>Mobilité Erasmus+ à l’Université Côte d’Azur</p></div>
+      <div class="milestone"><span class="year">2023</span><p>Début du doctorat en cotutelle internationale</p></div>
+      <div class="milestone"><span class="year">2024–2026</span><p>Lauréat du programme d’excellence Eiffel</p></div>
     </div>
-  </section>
-
-
-  <section id="publications" class="publications-section">
-    <h2>Publications et travaux de recherche</h2>
-    <p class="pub-intro">Articles scientifiques, travaux en cours d'évaluation et documents de travail. Les statuts éditoriaux sont distingués des versions de travail diffusées publiquement.</p>
-    <p class="pub-ranking-note">Les rangs indiqués correspondent à la liste du <strong>CNU, section 05, version de novembre 2025</strong>. Un preprint ou un working paper n'est pas assimilé à une publication en revue.</p>
-    <nav class="pub-shortcuts" aria-label="Parcourir les travaux scientifiques">
-      <a href="#articles-publies">Articles publiés <span>5</span></a>
-      <a href="#articles-acceptes">Acceptés <span>1</span></a>
-      <a href="#articles-revision">En révision <span>1</span></a>
-      <a href="#articles-soumis">Soumis <span>4</span></a>
-      <a href="#documents-travail">Working papers <span>1</span></a>
-      <a href="#manuscrits">Manuscrits <span>3</span></a>
-    </nav>
-    <div class="pub-group" id="articles-publies">
-  <div class="pub-group-heading"><h3>Articles publiés dans des revues à comité de lecture</h3><span class="pub-count">5</span></div>
-  
-  <article class="publication">
-  <h4>A Theoretical Survey of Corporate Social Responsibility: Between Externalities and Asymmetric Information</h4>
-  <p class="pub-authors">Emanuel Namaiwa Barke</p>
-  <div class="pub-meta"><em>Managerial and Decision Economics</em><span class="pub-dot" aria-hidden="true">·</span>2026<span class="pub-dot" aria-hidden="true">·</span><span class="rank">CNU 05 : rang B</span></div>
-  <div class="pub-actions"><a href="https://doi.org/10.1002/mde.70136" target="_blank" rel="noopener noreferrer">Résumé en ligne · DOI <span aria-hidden="true">↗</span></a><small>DOI : 10.1002/mde.70136</small></div>
-</article>
-<article class="publication">
-  <h4>Strategic CSR in Asymmetric Network Duopoly</h4>
-  <p class="pub-authors">Emanuel Namaiwa Barke</p>
-  <div class="pub-meta"><em>Journal of Economics</em><span class="pub-dot" aria-hidden="true">·</span>2026<span class="pub-dot" aria-hidden="true">·</span><span class="rank">CNU 05 : rang B</span></div>
-  <div class="pub-actions"><a href="https://doi.org/10.1007/s00712-026-00929-1" target="_blank" rel="noopener noreferrer">Résumé en ligne · DOI <span aria-hidden="true">↗</span></a><small>DOI : 10.1007/s00712-026-00929-1</small></div>
-</article>
-<article class="publication">
-  <h4>Network Externalities and Corporate Social Responsibility in a Bilateral Monopoly: The Roles of Timing and Nash Bargaining</h4>
-  <p class="pub-authors">Emanuel Namaiwa Barke</p>
-  <div class="pub-meta"><em>Research in Economics</em><span class="pub-dot" aria-hidden="true">·</span>2026 · vol. 80, no 3, art. 101170<span class="pub-dot" aria-hidden="true">·</span><span class="rank">CNU 05 : rang B</span></div>
-  <div class="pub-actions"><a href="https://doi.org/10.1016/j.rie.2026.101170" target="_blank" rel="noopener noreferrer">Résumé en ligne · DOI <span aria-hidden="true">↗</span></a><small>DOI : 10.1016/j.rie.2026.101170</small></div>
-</article>
-<article class="publication">
-  <h4>Endogenous Corporate Social Responsibility in the Presence of a Congestion Externality</h4>
-  <p class="pub-authors">Emanuel Namaiwa Barke et Khaireddine Jebsi</p>
-  <div class="pub-meta"><em>Journal of Industry, Competition and Trade</em><span class="pub-dot" aria-hidden="true">·</span>2026 · vol. 26, art. 24</div>
-  <div class="pub-actions"><a href="https://doi.org/10.1007/s10842-026-00486-9" target="_blank" rel="noopener noreferrer">Résumé en ligne · DOI <span aria-hidden="true">↗</span></a><small>DOI : 10.1007/s10842-026-00486-9</small></div>
-</article>
-<article class="publication">
-  <h4>Endogenous Corporate Social Responsibility in a Congested Network Monopoly: Passive Versus Responsive Consumer Expectations</h4>
-  <p class="pub-authors">Emanuel Namaiwa Barke</p>
-  <div class="pub-meta"><em>The Manchester School</em><span class="pub-dot" aria-hidden="true">·</span>2026<span class="pub-dot" aria-hidden="true">·</span><span class="rank">CNU 05 : rang B</span></div>
-  <div class="pub-actions"><a href="https://doi.org/10.1111/manc.70077" target="_blank" rel="noopener noreferrer">Résumé en ligne · DOI <span aria-hidden="true">↗</span></a><small>DOI : 10.1111/manc.70077</small></div>
-</article>
-</div>
-    <div class="pub-group" id="articles-acceptes">
-  <div class="pub-group-heading"><h3>Article accepté, à paraître</h3><span class="pub-count">1</span></div>
-  <p class="pub-note">Le lien CRESE renvoie à une version de travail (WP 2026-10) de cet article, non à une publication supplémentaire.</p>
-  <article class="publication">
-  <h4>Mutual Outsourcing in Network Industries: Cournot versus Stackelberg Competition</h4>
-  <p class="pub-authors">Emanuel Namaiwa Barke</p>
-  <div class="pub-meta"><em>Revue d’économie politique</em><span class="pub-dot" aria-hidden="true">·</span>Accepté, à paraître<span class="pub-dot" aria-hidden="true">·</span><span class="rank">CNU 05 : rang A</span></div>
-  <div class="pub-actions"><a href="https://crese.univ-fcomte.fr/publication/mutual-outsourcing-in-network-industries-cournotversus-stackelberg-competition/" target="_blank" rel="noopener noreferrer">Résumé en ligne · version de travail CRESE 2026-10 <span aria-hidden="true">↗</span></a></div>
-</article>
-</div>
-    <div class="pub-group" id="articles-revision">
-  <div class="pub-group-heading"><h3>Article en révision éditoriale</h3><span class="pub-count">1</span></div>
-  
-  <article class="publication">
-  <h4>Strategic CSR and Vertical Organization: Private Profitability versus Social Welfare</h4>
-  <p class="pub-authors">Emanuel Namaiwa Barke et Samar Hajji</p>
-  <div class="pub-meta"><em>Metroeconomica</em><span class="pub-dot" aria-hidden="true">·</span>Révision demandée (revise and resubmit) · 31 pages<span class="pub-dot" aria-hidden="true">·</span><span class="rank">CNU 05 : rang B</span></div>
-  
-</article>
-</div>
-    <div class="pub-group" id="articles-soumis">
-  <div class="pub-group-heading"><h3>Articles soumis à des revues</h3><span class="pub-count">4</span></div>
-  <p class="pub-note">Les liens ResearchGate renvoient aux preprints disponibles, et non à des versions publiées par les revues.</p>
-  <article class="publication">
-  <h4>Strategic CSR in a Bilateral Monopoly: Network Effects and Diseconomies of Scale</h4>
-  <p class="pub-authors">Emanuel Namaiwa Barke</p>
-  <div class="pub-meta"><em>The B.E. Journal of Economic Analysis &amp; Policy</em><span class="pub-dot" aria-hidden="true">·</span>Soumis · 23 pages<span class="pub-dot" aria-hidden="true">·</span><span class="rank">CNU 05 : rang B (Advances &amp; Frontiers)</span></div>
-  
-</article>
-<article class="publication">
-  <h4>A Note on Mutual Outsourcing and Tacit Collusion: Cournot versus Bertrand</h4>
-  <p class="pub-authors">Emanuel Namaiwa Barke</p>
-  <div class="pub-meta"><em>Revue économique</em><span class="pub-dot" aria-hidden="true">·</span>Soumis · 14 pages<span class="pub-dot" aria-hidden="true">·</span><span class="rank">CNU 05 : rang A</span></div>
-  <div class="pub-actions"><a href="https://www.researchgate.net/publication/416882284_A_note_on_mutual_outsourcing_and_tacit_collusion_Cournot_versus_Bertrand" target="_blank" rel="noopener noreferrer">Résumé et preprint · ResearchGate <span aria-hidden="true">↗</span></a></div>
-</article>
-<article class="publication">
-  <h4>Corporate Social Responsibility Affects Screening Incentives under Nonlinear Pricing</h4>
-  <p class="pub-authors">Emanuel Namaiwa Barke, Khaireddine Jebsi et Lionel Thomas</p>
-  <div class="pub-meta"><em>Journal of Business Ethics</em><span class="pub-dot" aria-hidden="true">·</span>Soumis · 48 pages<span class="pub-dot" aria-hidden="true">·</span><span class="rank">CNU 05 : rang A</span></div>
-  
-</article>
-<article class="publication">
-  <h4>Can Mutual Outsourcing Generate R&amp;D Anti-coordination?</h4>
-  <p class="pub-authors">Emanuel Namaiwa Barke</p>
-  <div class="pub-meta"><em>Review of Industrial Organization</em><span class="pub-dot" aria-hidden="true">·</span>Soumis · 36 pages<span class="pub-dot" aria-hidden="true">·</span><span class="rank">CNU 05 : rang A</span></div>
-  <div class="pub-actions"><a href="https://www.researchgate.net/publication/416882575_Can_mutual_outsourcing_generate_RD_anti-coordination" target="_blank" rel="noopener noreferrer">Résumé et preprint · ResearchGate <span aria-hidden="true">↗</span></a></div>
-</article>
-</div>
-    <div class="pub-group" id="documents-travail">
-  <div class="pub-group-heading"><h3>Working paper diffusé</h3><span class="pub-count">1</span></div>
-  
-  <article class="publication">
-  <h4>Cost Asymmetry and the R&amp;D Investment-decision Game</h4>
-  <p class="pub-authors">Emanuel Namaiwa Barke</p>
-  <div class="pub-meta"><em>CRESE Working Paper</em><span class="pub-dot" aria-hidden="true">·</span>Octobre 2026 · no 2026-14</div>
-  <div class="pub-actions"><a href="https://crese.univ-fcomte.fr/publication/cost-asymmetry-and-the-rd-investment-decision-game/" target="_blank" rel="noopener noreferrer">Résumé en ligne · CRESE <span aria-hidden="true">↗</span></a></div>
-</article>
-</div>
-    <div class="pub-group" id="manuscrits">
-  <div class="pub-group-heading"><h3>Manuscrits achevés, non soumis</h3><span class="pub-count">3</span></div>
-  
-  <article class="publication">
-  <h4>Promoting Corporate Social Responsibility in Franchise Networks: A Principal–Agent Model under Moral Hazard</h4>
-  <p class="pub-authors">Emanuel Namaiwa Barke et Khaireddine Jebsi</p>
-  <div class="pub-meta">Manuscrit achevé · non soumis · 56 pages</div>
-  
-</article>
-<article class="publication">
-  <h4>CSR or R&amp;D? Endogenous Strategic Orientation in a Cournot Duopoly with Technological Spillovers</h4>
-  <p class="pub-authors">Emanuel Namaiwa Barke et Khaireddine Jebsi</p>
-  <div class="pub-meta">Manuscrit achevé · non soumis · 38 pages</div>
-  
-</article>
-<article class="publication">
-  <h4>Mutual Outsourcing and the Ranking of Price and Quantity Competition</h4>
-  <p class="pub-authors">Emanuel Namaiwa Barke et Lionel Thomas</p>
-  <div class="pub-meta">Manuscrit achevé · non soumis · 13 pages</div>
-  
-</article>
-</div>
-  </section>
-
-  <section id="enseignement">
-    <h2>Enseignement</h2>
-
-    <p>
-      J'enseigne la microéconomie et l'économétrie
-      à l'Université Marie et Louis Pasteur.
-      J'ai également assuré des enseignements
-      de microéconomie, d'économétrie et de
-      mathématiques à l'Université de Sousse.
-    </p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-
-    <p>
-      <strong>
-        Centre de recherche sur les stratégies
-        économiques (CRESE)
-      </strong><br>
-      Université Marie et Louis Pasteur<br>
-      Besançon, France
-    </p>
-
-    <p>
-      <a href="mailto:emanuel.namaiwa_barke@univ-fcomte.fr">
-        emanuel.namaiwa_barke@univ-fcomte.fr
-      </a>
-    </p>
-
-    <p>
-      <a href="https://www.researchgate.net/profile/Emanuel-Barke"
-         target="_blank" rel="noopener noreferrer">
-        ResearchGate
-      </a>
-      &nbsp;·&nbsp;
-      <a href="https://orcid.org/0009-0005-5897-1736"
-         target="_blank" rel="noopener noreferrer">
-        ORCID
-      </a>
-    </p>
-  </section>
-
+  </div>
+</section>
 </main>
-
-<footer>
-  © 2026 Emanuel Namaiwa Barke
-  · Site web académique personnel
-</footer>
-
-</body>
-</html>
+<footer>© 2026 Emanuel Namaiwa Barke · Site web académique personnel</footer>
+</body></html>
