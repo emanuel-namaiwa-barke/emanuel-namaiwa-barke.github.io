@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="1040" viewBox="0 0 600 1040" role="img" aria-labelledby="title desc">
+<title id="title">Carte de visite académique d'Emanuel Namaiwa Barke</title>
+<desc id="desc">Dr Emanuel Namaiwa Barke, contact universitaire et QR code vers son site académique. Modèle à utiliser après la soutenance doctorale.</desc>
+<defs>
+<linearGradient id="navy" x2="1" y2="1"><stop stop-color="#0A2943"/><stop offset="1" stop-color="#18324D"/></linearGradient>
+<linearGradient id="cream" x2="1" y2="1"><stop stop-color="#FFFEFC"/><stop offset="1" stop-color="#F7F8F6"/></linearGradient>
+<linearGradient id="wave" x2="0" y2="1"><stop stop-color="#D6EEE9"/><stop offset="1" stop-color="#AED7D1"/></linearGradient>
+</defs>
+<rect width="600" height="1040" fill="url(#cream)"/>
+<rect width="600" height="337" fill="url(#navy)"/>
+<rect x="37" y="56" width="5" height="93" rx="2.5" fill="#65BFB0"/>
+<g font-family="Georgia, Times New Roman, serif" fill="#FFFFFF">
+<text x="65" y="98" font-size="49">Dr. Emanuel</text>
+<text x="65" y="154" font-size="49">Namaiwa Barke</text>
+</g>
+<text x="65" y="203" font-size="22" font-family="Arial, sans-serif" fill="#DEEBF1">Docteur en sciences économiques · ATER</text>
+<path d="M65 238H535" stroke="#8DA4B4" stroke-width="1.5"/>
+<text x="65" y="274" font-family="Arial, sans-serif" font-size="23" font-weight="bold" fill="#FFFFFF">Université Marie et Louis Pasteur</text>
+<text x="65" y="308" font-family="Arial, sans-serif" font-size="21" fill="#C8E9E4">CRESE · Besançon, France</text>
+<text x="45" y="396" font-size="25" letter-spacing="2" font-weight="bold" fill="#146E65" font-family="Arial, sans-serif">CONTACT ACADÉMIQUE</text>
+<path d="M45 420H112" stroke="#20766F" stroke-width="4" stroke-linecap="round"/>
+<g font-family="Arial, sans-serif" font-size="21" fill="#10273E">
+<text x="45" y="472" font-size="22" fill="#16736A">✉</text>
+<text x="88" y="472" font-size="19">emanuel.namaiwa_barke@univ-fcomte.fr</text>
+<text x="45" y="531" font-size="22" fill="#16736A">☎</text>
+<text x="88" y="531">+33 7 58 68 63 11</text>
+<text x="45" y="590" font-size="23" fill="#16736A">◎</text>
+<text x="88" y="590" font-size="21">emanuel-namaiwa-barke.github.io</text>
+</g>
+<path d="M45 641H555" stroke="#D5E3E3" stroke-width="1.5"/>
+<rect x="184" y="672" width="232" height="232" rx="5" fill="white"/>
+<image x="197" y="685" width="206" height="206" image-rendering="pixelated" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjAQAAAAA2oo70AAAAy0lEQVR42mXOMUsCYQDH4d/799I4sK2SiGpNRMTFpWjQL+DU4OTcFjS1FNzc0t7m4qqLCH6Dxoii4RXSW+pEudC7yLehseWZH+OAsQD4M9M+2+hVmA2TkVWShu+IqAwiewXKme4+2GL3xuKie2eJbqdZqzTspLAsbN1Zz5TqO+jnOf+CNlvLDJoeXlcx8WTgNzy/7p/jzZ8evmDdO0it3PC4iia1/Cu4TyKr8elbHzN7jE9iJR/BHmJ3e4X4rl2i3HoRoPnFURPz7/8LgK5Jcx47tdsAAAAASUVORK5CYII="/>
+<path d="M70 947H179M421 947H530" stroke="#9CC8C2" stroke-width="2"/>
+<rect x="192" y="925" width="216" height="42" rx="21" fill="#E1F1EF"/>
+<text x="300" y="954" text-anchor="middle" font-family="Arial, sans-serif" font-size="23" fill="#1C665F">Scan &amp; Connect</text>
+<path d="M0 1017C149 959 249 1085 407 1018S531 1005 600 991V1040H0Z" fill="url(#wave)"/>
+</svg>
