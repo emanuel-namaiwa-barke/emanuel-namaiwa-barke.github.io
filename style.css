@@ -578,3 +578,45 @@ html.js-publications-ready #publications .pub-group:not(.is-active) {display:non
 .digital-business-card-actions .button{display:inline-block;text-align:center;}
 .digital-business-card-note{font-size:12px;color:var(--muted);line-height:1.7;max-width:340px;margin:4px 0 0;}
 @media(max-width:600px){.digital-business-card>summary{padding:18px;}.digital-business-card-content{padding:17px;gap:20px;justify-content:center;}.digital-business-card-actions{align-items:stretch;width:100%;min-width:0;}.digital-business-card-pdf-preview{width:100%;height:310px;}}
+
+/* Publications et recherche — page académique unifiée */
+.portfolio-page{padding-top:22px;}
+.portfolio.publications-section{padding:24px 0 54px;border-top:0;}
+.portfolio-hero{padding:4px 0 28px;}
+.portfolio-hero .eyebrow{margin:0 0 9px;letter-spacing:1.6px;}
+.portfolio-hero h1{font-size:clamp(32px,4.4vw,49px);margin:0 0 13px;line-height:1.18;}
+.portfolio-lead{font-size:16px;max-width:850px;line-height:1.75;color:var(--muted);margin:0 0 23px;}
+.portfolio-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;margin:0 0 25px;}
+.portfolio-stat{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--border);border-radius:8px;padding:12px 14px;color:var(--navy);text-decoration:none;min-width:0;}
+.portfolio-stat-primary{border-top:3px solid var(--teal);padding-top:10px;}
+.portfolio-stat strong{color:var(--navy);font:700 29px/1 Georgia,serif;font-variant-numeric:tabular-nums;}
+.portfolio-stat span{font-size:13px;font-weight:650;line-height:1.4;overflow-wrap:anywhere;}
+.portfolio-stat:hover,.portfolio-stat:focus-visible{border-color:var(--teal);background:#f3f9f8;}
+.portfolio-jumps{display:flex;flex-wrap:wrap;gap:9px 24px;padding:12px 0 0;border-top:1px solid var(--border);}
+.portfolio-jumps a{font-size:13px;font-weight:700;text-decoration:underline;text-underline-offset:4px;}
+.portfolio-block{margin:0;padding:27px 0 25px;border-top:1px solid var(--border);scroll-margin-top:115px;}
+.portfolio-block h2{font:700 clamp(24px,2.8vw,31px)/1.28 Georgia,serif;margin:0 0 14px;}
+.portfolio .pub-ranking-note{margin:0 0 23px;padding:11px 14px;line-height:1.65;}
+.portfolio .pub-group{margin:0 0 27px;}
+.portfolio .pub-group-heading{border-bottom:0;margin:0 0 12px;padding:0;}
+.portfolio .pub-group-heading h3{font-size:17px;font-family:"Segoe UI",Arial,sans-serif;line-height:1.4;}
+.portfolio .portfolio-featured .publication{padding:18px 21px;border-left:3px solid var(--teal);border-radius:7px;}
+.portfolio .portfolio-featured .publication h4{font-size:17px;line-height:1.45;}
+.portfolio .pub-group:last-child{margin-bottom:0;}
+.portfolio-library-link{font-size:13px;font-weight:650;margin:13px 0 25px;}
+.portfolio-library-link a{text-underline-offset:3px;}
+.portfolio-section-intro{color:var(--muted);font-size:14px;margin:0 0 18px;}
+.portfolio .portfolio-fold{background:#fff;border:1px solid var(--border);border-radius:8px;margin:0 0 10px;scroll-margin-top:115px;}
+.portfolio-fold>summary{display:flex;align-items:center;gap:12px;padding:15px 18px;cursor:pointer;list-style:none;}
+.portfolio-fold>summary::-webkit-details-marker{display:none;}
+.portfolio-fold>summary h3{font-size:16px;line-height:1.4;color:var(--navy);margin:0;flex:1;}
+.portfolio-fold>summary:hover{background:#f4f9f8;border-radius:8px;}
+.portfolio-fold>summary:focus-visible,.portfolio a:focus-visible{outline:2px solid var(--teal);outline-offset:3px;}
+.portfolio-chevron{display:block;flex:0 0 9px;width:9px;height:9px;border-bottom:2px solid var(--teal);border-right:2px solid var(--teal);transform:rotate(45deg);margin:0 4px 4px;}
+.portfolio-fold[open] .portfolio-chevron{transform:rotate(225deg);margin-top:5px;}
+.portfolio-fold-body{padding:17px 18px 6px;border-top:1px solid var(--border);}
+.portfolio .portfolio-fold .publication{border-left:2px solid #92bbb8;}
+.portfolio #recherche .card{padding:19px;}
+.portfolio #recherche .card h3{line-height:1.4;}
+.portfolio .book-research-card{margin:0;scroll-margin-top:115px;}
+@media(max-width:760px){.portfolio-page{padding-top:12px;}.portfolio-stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;}.portfolio-stat{padding:11px;}.portfolio-stat strong{font-size:26px;}.portfolio-stat span{font-size:12px;}.portfolio-jumps{gap:10px 16px;}.portfolio-block{padding:23px 0;scroll-margin-top:155px;}.portfolio .portfolio-fold{scroll-margin-top:155px;}.portfolio .portfolio-featured .publication{padding:15px;}.portfolio .portfolio-featured .publication h4{font-size:16px;}.portfolio-fold>summary{padding:13px;}.portfolio-fold-body{padding:13px 12px 2px;}.portfolio .book-research-card{scroll-margin-top:155px;}}
